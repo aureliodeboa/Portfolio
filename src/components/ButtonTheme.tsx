@@ -11,7 +11,7 @@ export const ButtonTheme = ()=>{
         }
     }
     return(
-        <div className="w-10 cursor-pointer justify-center m-2 p-2">
+        <div className="w-10 cursor-pointer justify-center ml-2 my-2 mr-8 p-2">
 
           <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-110 transition-all dark:-rotate-90 dark:scale-0"
             onClick={()=>setTheme("dark")}
