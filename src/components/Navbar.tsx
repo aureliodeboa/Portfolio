@@ -31,10 +31,6 @@ export const Navbar =()=> {
                   
              </ul>
              
-           
-
-
-            
             <div className="flex justify-around sm:justify-items-end md:justify-items-end lg:justify-center md:w-80 ">
                 <Switchlanguage/>
                 <ButtonTheme/>
