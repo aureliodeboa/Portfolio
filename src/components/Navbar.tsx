@@ -3,16 +3,17 @@ import { ButtonLink } from "./ButtonLink"
 import { ButtonTheme } from "./ButtonTheme"
 import { Switchlanguage } from "./Switchlanguage"
 import { useState } from "react"
+import {  useTranslation } from "react-i18next"
 
 
 export const Navbar =()=> {
-
+    const { t } = useTranslation();
     let Links= [
-        {name:"Inicio", _onClink:()=>{}},
-        {name:"Sobre mim", _onClink:()=>{}},
-        {name:"Experiencia", _onClink:()=>{}},
-        {name:"Projetos", _onClink:()=>{}},
-        {name:"Contato", _onClink:()=>{}},
+        {name:t("navLinks.start"), _onClink:()=>{}},
+        {name:t("navLinks.about-me"), _onClink:()=>{}},
+        {name:t("navLinks.experience"), _onClink:()=>{}},
+        {name:t("navLinks.projects"), _onClink:()=>{}},
+        {name:t("navLinks.contact"), _onClink:()=>{}},
     ]
     let[openMenu,setOpenMenu]=useState(false);
 
