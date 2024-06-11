@@ -1,5 +1,5 @@
 import { link } from "fs"
-import { Buttonavbar } from "./Buttonavbar"
+import { ButtonLink } from "./ButtonLink"
 import { ButtonTheme } from "./ButtonTheme"
 import { Switchlanguage } from "./Switchlanguage"
 import { useState } from "react"
@@ -24,14 +24,14 @@ export const Navbar =()=> {
                  {
                      Links.map((link)=>(
                             <li key={link.name} className="items-center justify-center flex"> 
-                             <Buttonavbar  label={link.name} _onClick={link._onClink} />
+                             <ButtonLink  label={link.name} _onClick={link._onClink} />
                             </li>                          
                      ))
                  }
                   
              </ul>
              
-            <div className="flex justify-around sm:justify-items-end md:justify-items-end lg:justify-center md:w-80 ">
+            <div className="flex justify-around sm:justify-items-end md:justify-items-end lg:justify-between md:w-80 ">
                 <Switchlanguage/>
                 <ButtonTheme/>
                 <button type="button" title="menu-mobile" onClick={()=>setOpenMenu(!openMenu)} className="w-8 justify-self-end md:hidden  flex  h-[30px] my-2 cursor-pointer"> 
