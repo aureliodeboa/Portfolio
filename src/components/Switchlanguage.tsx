@@ -1,8 +1,14 @@
-import { useState } from "react"
+import { useState } from "react";
+import {useTranslation} from "react-i18next";
 
 export const Switchlanguage = ()=>{
-    const[isSelected, setIsSelected]= useState(true)
-    const handleToggle = () =>  isSelected?setIsSelected(false):setIsSelected(true);
+    const {i18n} = useTranslation();
+    const[isSelected, setIsSelected]= useState(true);
+    const handleToggle = () =>  {
+        isSelected?setIsSelected(false):setIsSelected(true); //se brasil falso se ingles falso
+        isSelected?i18n.changeLanguage('en'):i18n.changeLanguage('pt'); //seta o idioma
+
+    };
     {/*!isSelected && <div className="absolute right-0 top-0 bottom-0 bg-black  text-white w-12   rounded-full py-2 text-xs transition duration-150 ease-in-out translate-x-full">US</div> */}
 
     return(
