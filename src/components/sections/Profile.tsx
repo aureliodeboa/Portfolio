@@ -18,7 +18,7 @@ export const Profile = () =>{
                 </span>
 
                 <div className="flex flex-row justify-center lg:justify-start  items-center mr-1 h-20 w-full">
-                    <ButtonMidia clickAction={()=>{}}><span className="h-[30px] sm:flex flex-row justify-around hidden p-1 mr-1">Curriculo</span><span className="mt-[2px] sm:size-[25px] flex justify-center items-center"><BsDownload size={"27px"} /></span></ButtonMidia>
+                    <ButtonMidia clickAction={()=>{}}><span className="h-[30px] sm:flex flex-row justify-around hidden p-1 mr-1">Curriculo</span><span className=" mt-[2px] sm:size-[25px] flex justify-center items-center"><BsDownload size={"27px"} /></span></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><SiLinkedin size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><VscGithubInverted size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><LuMail size={"30px"} /></ButtonMidia>
