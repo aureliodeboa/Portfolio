@@ -7,7 +7,7 @@ type Props = {
 
 export const ButtonMidia = ({children}:Props)=>{
     return(
-        <button className=" rounded-md m-[2px] p-2 bg-[#FFFFFF] text-black dark:bg-[#1E1E1E] dark:text-white flex flex-row justify-center">
+        <button className=" rounded-md m-[2px] p-2 bg-[#ffffff] border border-black  text-black dark:bg-[#1E1E1E] dark:text-white flex flex-row justify-center">
             {children}
         </button>
     )

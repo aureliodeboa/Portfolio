@@ -14,13 +14,12 @@ export const Profile = () =>{
             <div className="flex-1 flex-col  justify-center text-center xl:text-start lg:text-start">
                 <span className="w-full text-wrap flex flex-col justify-center">
                     <h1 className="font-bold text-2xl md:text-2xl lg:text-4xl">Olá, eu sou Aurelio Ribeiro!</h1>
-                    <p className="mt-2 pr-4 text-sm md:text-lg w-5/4">Graduando em Engenharia  da computação, Desenvolvedor Front-End, Mobile e entusiasta na análise de dados.</p>
+                    <p className="mt-2 pr-4 text-sm md:text-lg w-5/4 text-center lg:text-start">Graduando em Engenharia  da computação, Desenvolvedor Front-End, Mobile e entusiasta na análise de dados.</p>
                 </span>
 
                 <div className="flex flex-row justify-center lg:justify-start  items-center mr-1 h-20 w-full">
                     <ButtonMidia clickAction={()=>{}}><span className="h-[30px] sm:flex flex-row justify-around hidden p-1 mr-1">Curriculo</span><span className="mt-[2px] sm:size-[25px] flex justify-center items-center"><BsDownload size={"27px"} /></span></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><SiLinkedin size={"30px"} /></ButtonMidia>
-                    <ButtonMidia clickAction={()=>{}}><VscGithubAlt size={"30px"} />                    </ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><VscGithubInverted size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><LuMail size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><SiSpotify size={"30px"} /></ButtonMidia>
