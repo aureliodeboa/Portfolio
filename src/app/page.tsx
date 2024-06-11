@@ -1,6 +1,7 @@
 "use client"
 import { Container } from "@/components/Container";
 import { Navbar } from "@/components/Navbar";
+import { Profile } from "@/components/sections/Profile";
 
 import { ThemeProvider } from "@/contexts/ThemeContext";
 
@@ -9,7 +10,7 @@ const Page = () =>{
     <ThemeProvider>
       <Container>
         <Navbar/>
-        <h1>...</h1>
+        <Profile/>
       </Container>
 
     </ThemeProvider>

@@ -8,7 +8,7 @@ export const ThemeContext = createContext<ThemeContextType | null> (null);
 
 export const ThemeProvider = ({children}: {children: ReactNode})=>{
     const localstoragetemp = typeof window !== 'undefined' ? localStorage.getItem(THEME_LOCAL_KEY) : "dark" //isso tira um error que estava dando por causa do localStorage
-    const [theme, setTheme]= useState(localstoragetemp||'dark'); //procura qual tema esta definido, caso null colaca-se dark
+    const [theme, setTheme]= useState('dark'); //coloca o tema dark como inicial
     
     useEffect(()=>{
         if(theme=='dark')
