@@ -4,7 +4,7 @@ type Props = {
 }
 
 
-export const Buttonavbar = ({label, _onClick}: Props) =>{
+export const ButtonLink = ({label, _onClick}: Props) =>{
     return(
      <div className="flex flex-col text-sm  sm:mx-1 md:mx-2 md:min-w-[80px] md:text-sm lg:text-base">
           <button className="h-8 my-auto

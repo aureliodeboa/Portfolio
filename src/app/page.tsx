@@ -12,7 +12,6 @@ const Page = () =>{
         <Navbar/>
         <Profile/>
       </Container>
-
     </ThemeProvider>
 
   )
