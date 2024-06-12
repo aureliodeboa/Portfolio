@@ -1,6 +1,6 @@
 # Meu Portfólio
 
-## Ainda estou desenvolvendo...
+## Em desenvolvendo...
 
 Este repositório contém o código-fonte do meu site de portfólio pessoal, desenvolvido com Next.js, Tailwind CSS, React e TypeScript. O site é totalmente responsivo e conta com funcionalidades de troca de tema (dark mode e light mode) e internacionalização troca de idiomas.
 
@@ -35,7 +35,7 @@ Este repositório contém o código-fonte do meu site de portfólio pessoal, des
 
 ```bash
 git clone https://github.com/aureliodeboa/Portifolio.git
-cd portifolio
+cd portfolio
 ```
 
 ### Instalando Dependências
