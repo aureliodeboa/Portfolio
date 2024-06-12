@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Meu Portfólio
 
-## Getting Started
+Este repositório contém o código-fonte do meu site de portfólio pessoal, desenvolvido com Next.js, Tailwind CSS, React e TypeScript. O site é totalmente responsivo e conta com funcionalidades de troca de tema (dark mode e light mode) e internacionalização troca de idionmas.
 
-First, run the development server:
+## Funcionalidades
+
+- **Next.js**: Framework React para renderização server-side e geração de sites estáticos.
+- **Tailwind CSS**: Biblioteca de estilos utilitários para construção rápida de interfaces customizadas.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **TypeScript**: Superset de JavaScript que adiciona tipos estáticos ao código.
+- **i18n**: Biblioteca para internacionalização, facilitando a tradução do site para diferentes idiomas.
+
+
+## Seções do Site
+
+1. **Início**: Uma apresentação básica sobre mim.
+2. **Sobre Mim**: Uma seção que conta um pouco da minha trajetória.
+3. **Experiências**: Mostra os lugares onde já trabalhei.
+4. **Projetos**: Alguns links dos meus repositórios no GitHub.
+5. **Contatos**: Links para LinkedIn,E-mail e WhatsApp e um formulário para envio de e-mail.
+
+## Instalação e Uso
+
+### Pré-requisitos
+
+- Node.js
+- npm ou yarn
+
+### Clonando o Repositório
+
+```bash
+git clone https://github.com/aureliodeboa/Portifolio.git
+cd seu-repositorio
+```
+
+### Instalando Dependências
+
+Com npm:
+
+```bash
+npm install
+```
+
+Com yarn:
+
+```bash
+yarn install
+```
+
+### Executando o Projeto
+
+Com npm:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Com yarn:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+O site estará disponível em `http://localhost:3000`.
 
-## Learn More
+## Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+```
+/app
+  - layout.tsx         # Configurações globais do app
+  - page.tsx          # Página inicial
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/assets               #diretoriio que possui todos os arquivos estaticos
+ 
+/components
+  - ButtonLink.tsx    # Componente dos botões da navbar
+  - ButtonMidia.tsx   # Componente dos botões de contatos
+  - ButtonTheme.tsx   # Componente de troca de tema
+  - Container.tsx     # Componente do background do site
+  - Navbar.tsx        # Componente Navbar
+  - Swintchlanguage.tsx # Componente para troca de linguagem
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+/componets/sections
+  - Profile.tsx          # Primeira secção do site
+  - about-me.tsx         # Secção sobre mim
+  - experiences.tsx      # Secçãode experiências
+  - projects.tsx         # Secçãode projetos
+  - contact.tsx          # Secção para contato
 
-## Deploy on Vercel
+/contexts
+  - ThemeContext.tsx  # Contexto para gerenciamento de tema
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/types
+  -ThemeContextType.ts  # Criação do type do contexto.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+/src
+  - i18nify.ts          # Configuração de internacionalização
+  - globals.css       # Estilos globais com Tailwind CSS
+
+
+
+```
+
+## Contribuição
+
+Sinta-se à vontade para fazer um fork deste repositório e enviar pull requests. Toda contribuição é bem-vinda!
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
+
+---
+
+**Contato**
+
+Para mais informações, entre em contato através das redes sociais ou envie um e-mail através do formulário no site.
+
+- [LinkedIn](https://www.linkedin.com/in/aurelioribeiro/)
+- [GitHub](https://github.com/aureliodeboa)
+
+
+---
+
+**Autor**
+
+[Aurélio Ribeiro]
+
+Desenvolvedor Full-Stack | Entusiasta de Tecnologia
+
+---
+
+Espero que este README forneça todas as informações necessárias para entender, configurar e contribuir para o projeto do meu portfólio pessoal. Se tiver alguma dúvida, não hesite em entrar em contato!
