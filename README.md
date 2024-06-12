@@ -7,7 +7,7 @@ Este repositório contém o código-fonte do meu site de portfólio pessoal, des
 ![image](https://github.com/aureliodeboa/Portifolio/assets/53971991/8caee58c-71b2-4f3b-ae35-d30fcf198f06)
 
 
-## Funcionalidades
+## Tecnologias Utilizadas
 
 - **Next.js**: Framework React para renderização server-side e geração de sites estáticos.
 - **Tailwind CSS**: Biblioteca de estilos utilitários para construção rápida de interfaces customizadas.
