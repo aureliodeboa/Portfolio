@@ -8,7 +8,7 @@ type Props = {
 export const Container = ({children}:Props)=>{
     const themeCtx =useTheme();
     return(
-        <div className="w-full h-screen bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex flex-col justify-center" >
+        <div className="w-full overflow-x-scroll h-dvh bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex flex-col justify-around" >
             {children}
         </div>
     )
