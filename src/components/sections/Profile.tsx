@@ -12,7 +12,7 @@ export const Profile = () =>{
     const { t } = useTranslation();
     return(
         <section className="flex flex-col justify-center  xl:flex-row  gap-6  lg:px-28 lg:flex-row w-full px-5 content-center items-center">
-            <span className="flex justify-center xl:ml-2  lg:ml-8"><img className="rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px] mt-10 md:mt-10 lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></span>
+            <span className="flex justify-center  xl:ml-2  lg:ml-8"><img className="drop-shadow-xl  rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px] mt-10 md:mt-10 lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></span>
 
             <div className="flex-1 flex-col  justify-center text-center xl:text-start lg:text-start">
                 <span className="w-full text-wrap flex flex-col justify-center">
