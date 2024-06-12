@@ -3,7 +3,7 @@ import {initReactI18next} from 'react-i18next';
 
 import enTranslation from '../locales/en.json';
 import ptTranslation from '../locales/pt.json';
-import { debug } from 'console';
+
 
 const resources = {
     en:{

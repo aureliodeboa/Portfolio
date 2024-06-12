@@ -4,6 +4,7 @@ import { ButtonTheme } from "./ButtonTheme"
 import { Switchlanguage } from "./Switchlanguage"
 import { useState } from "react"
 import {  useTranslation } from "react-i18next"
+import { IoIosMenu, IoMdClose } from "react-icons/io"
 
 
 export const Navbar =()=> {
@@ -36,10 +37,11 @@ export const Navbar =()=> {
                 <Switchlanguage/>
                 <ButtonTheme/>
                 <button type="button" title="menu-mobile" onClick={()=>setOpenMenu(!openMenu)} className="w-8 justify-self-end md:hidden  flex  h-[30px] my-2 cursor-pointer"> 
-                    
-                    <svg xmlns="http://www.w3.org/2000/svg"  className={openMenu?'hidden':''} viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="32" d="M80 160h352M80 256h352M80 352h352"/></svg>
+                
+                <IoIosMenu className={`${openMenu?' hidden':''} `} size={"32px"}  />
+                <IoMdClose className={`${openMenu?'':'hidden'} `} size={"30px"} />
 
-                    <svg xmlns="http://www.w3.org/2000/svg" className={openMenu?'':'hidden'} viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M368 368L144 144M368 144L144 368"/></svg>
+                   
                 </button>
                
             </div>
