@@ -17,6 +17,11 @@ const Page = () =>{
         <Navbar/>
         <Profile/>
         <About_me/>
+        <div className="h-screen">
+          <div className="h-dvh">
+            ...
+          </div>
+        </div>
       </Container>
     </ThemeProvider>
 
