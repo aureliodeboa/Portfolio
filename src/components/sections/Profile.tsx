@@ -16,8 +16,8 @@ export const Profile = () =>{
 
             <div className="flex-1 flex-col  justify-center text-center xl:text-start lg:text-start">
                 <span className="w-full text-wrap flex flex-col justify-center">
-                    <h1 className="font-bold text-2xl md:text-2xl lg:text-4xl">{t("profileSection.title")}</h1>
-                    <p className="mt-2 pr-4 text-sm md:px-16 lg:px-0 md:text-lg w-5/4 text-center lg:text-start">{t("profileSection.description")}</p> 
+                    <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl">{t("profileSection.title")}</h1>
+                    <p className="mt-2 pr-4 text-sm sm:text-base md:px-16 lg:px-0 md:text-lg w-5/4 text-center lg:text-start">{t("profileSection.description")}</p> 
                 </span>
 
                 <div className="flex flex-row justify-center lg:justify-start  items-center mr-1 h-20 w-full">
