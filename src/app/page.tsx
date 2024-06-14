@@ -5,6 +5,8 @@ import { Profile } from "@/components/sections/Profile";
 import '../i18nify';
 
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { About_me } from "@/components/sections/About-me";
+
 
 
 
@@ -14,6 +16,12 @@ const Page = () =>{
       <Container>
         <Navbar/>
         <Profile/>
+        <About_me/>
+        <div className="h-screen">
+          <div className="h-dvh">
+            ...
+          </div>
+        </div>
       </Container>
     </ThemeProvider>
 

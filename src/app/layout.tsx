@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Aurélio Ribeiro",
-  description: "Portifolio de Aurélio Ribeiro Graduando em Engenharia da computação, Desenvolvedor Front-End, Mobile e entusiasta na análise de dados.",
+  description: "Portfolio de Aurélio Ribeiro Graduando em Engenharia da computação, Desenvolvedor Front-End, Mobile e entusiasta na análise de dados.",
 };
 
 export default function RootLayout({
