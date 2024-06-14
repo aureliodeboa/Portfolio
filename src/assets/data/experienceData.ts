@@ -1,20 +1,24 @@
 import { ExperienceCardType } from "@/types/ExperienceCardType";
 import i9logo from "@/assets/images/logo_i9.png"
+import ebserhlogo from "@/assets/images/ebserh_Logo.png"
+import facepelogo from "@/assets/images/facepe_logo.png"
 
 export const experienceData: ExperienceCardType[]= [
 {
+    id:1,
     logoCompany: i9logo,
     titleCompany: "Inove Jr",
     subtitleCompany:"Soluções em Tecnologia",
 
     titleJob: "Membro- Gestão Operacional",
     descriptionJob: ["Gestão Financeira da empresa"," Ministrei minicursos de C","Ajudei no desenvolvimento do site da empresa em React","Desenvolvimento de projetos web e mobile na empresa"],
-    usedtechnologies: ["React","Git","Scrum","Html","Flutter","Javiscript","Typescript","Figma"],
+    usedtechnologies: ["React","Git","Scrum","Html","Flutter","Javascript","Typescript","Figma"],
     dateIn: new Date(2024,3,2),
     dateOut: "Atualmente",
 },
 {
-    logoCompany: i9logo,
+    id:2,
+    logoCompany: facepelogo,
     titleCompany: "FACEPE - Bolsista",
     subtitleCompany:"Apoio a Implantação de Recursos de Business Intelligence em Comércio e Serviços",
 
@@ -24,8 +28,9 @@ export const experienceData: ExperienceCardType[]= [
     dateIn: new Date(2024,3,2),
     dateOut: "Atualmente",
 },
-{
-    logoCompany: i9logo,
+{   
+    id:3,
+    logoCompany: ebserhlogo,
     titleCompany: "Bolsista PIT (Programa de Iniciação Tecnológica)",
     subtitleCompany:"Desenvolvimento do Aplicativo para Guia Terapêutico Antimicrobiano",
 
@@ -36,7 +41,8 @@ export const experienceData: ExperienceCardType[]= [
     dateOut: new Date(2023,8),
 },
 {
-    logoCompany:i9logo,
+    id:4,
+    logoCompany: facepelogo,
     titleCompany: "FACEPE - Bolsista",
     subtitleCompany:"Desenvolvimento de um Aplicativo para auxiliar idosos com demência e seus cuidadores",
 
@@ -49,14 +55,3 @@ export const experienceData: ExperienceCardType[]= [
 
 ]
 
-/*  logoCompany : string;
-    titleCompany :string;
-    subtitleCompany?: string;
-    
-    //jobs descritions
-    titleJob: string;
-    description: string;
-    usedtechnologies :string[];
-    dateIn:Date;
-    dateOut: Date | string;
- */
