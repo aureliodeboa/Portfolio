@@ -6,7 +6,7 @@ import { ToolsComponent } from "./ToolsComponent"
 
 export const ExperienceCard= (experienceCardContent:ExperienceCardType)=>{
     return(
-        <div className="relative h-auto w-[auto] max-w-[40%] bg-[#151414] border-b-4  border-[#a18b32f6] hover:shadow-xl hover:shadow-[#241d15] transition-shadow ease-in-out  flex flex-col rounded-[20px] justify-between">
+        <div className="relative h-auto w-[450px]   bg-[#151414] border-b-4  border-[#a18b32f6] hover:shadow-xl hover:shadow-[#241d15] transition-shadow ease-in-out  flex flex-col rounded-[20px] justify-between">
             <div className="m-3">
                  <div className=" flex flex-row p-2">
                     <img className="rounded-sm mr-2 h-20 " src={experienceCardContent.logoCompany?.src} alt="" />
@@ -40,6 +40,9 @@ export const ExperienceCard= (experienceCardContent:ExperienceCardType)=>{
                     }
                   
                  </div>
+                  {/* triangulo que aparece do lado direito somente quando xl caso contrario fica oculto o segund span é o triangulo do lado esquerdo*/}
+                    <span className={`${experienceCardContent.id%2?'md:flex':''} hidden  absolute -right-7 top-3 rounded-md  border-solid border-l-[#181616b7] border-l-[30px] border-y-transparent border-y-[30px] border-r-0`}></span>
+                    <span className={`${experienceCardContent.id%2?'sm:flex md:hidden':'sm:flex'} hidden  absolute -left-7 top-3 border-solid border-r-[#181616b7] border-r-[30px] border-y-transparent border-y-[30px] border-l-0`}></span>
         </div>
     )
 }
