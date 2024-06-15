@@ -5,7 +5,7 @@ import { TimeLine } from "../TimeLine";
 export const About_me = () =>{
     const { t } = useTranslation();
     return(
-        <section className="flex flex-col items-center pt-8  h-auto gap-8  justify-around border-t-[1px] border-gray-800 border-solid ">
+        <section className="flex flex-col items-center w-full pt-8  h-auto gap-8  justify-around border-t-[1px] border-gray-800 border-solid ">
            
              <div className="h-1/2 px-4 sm:px-10 md:px-20  ">
                 <h1 className="py-5 text-2xl">{t("about-me.title")}</h1>
