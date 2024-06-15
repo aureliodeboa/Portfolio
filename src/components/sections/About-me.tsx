@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ExperienceCard } from "../ExperienceCard";
 import { experienceData } from "@/assets/data/experienceData"
-import { TimeLine } from "../TimeLine";
+
 export const About_me = () =>{
     const { t } = useTranslation();
     return(
@@ -13,12 +13,12 @@ export const About_me = () =>{
              </div>
                         
              <div className=" relative h-auto flex flex-row flex-wrap  justify-around py-10 gap-4 w-full items-center ">
-                    <TimeLine/>
+                    <hr className="absolute    w-[2px] xl:left-[50%] bg-black h-full  dark:bg-white" />
                     {experienceData.map((experience)=>(
-                        <div key={experience.id} className={`w-full px-4 sm:px-5 xl:px-20 flex justify-center  sm:justify-items-start  ${experience.id%2?'md:justify-start':'md:justify-end'}`}>
+                        <div key={experience.id} className={`w-full px-4 sm:px-5 xl:px-20 flex justify-center    ${experience.id%2?'md:justify-start':'md:justify-end'}`}>
                              
                             
-                            <ExperienceCard  id={experience.id} logoCompany={experience.logoCompany} titleCompany={experience.titleCompany} titleJob={experience.titleCompany}
+                            <ExperienceCard  id={experience.id} logoCompany={experience.logoCompany} titleCompany={experience.titleCompany} titleJob={experience.titleJob}
                             dateIn={experience.dateIn} dateOut={experience.dateOut} descriptionJob={experience.descriptionJob} usedtechnologies={experience.usedtechnologies}
                             key={experience.id} subtitleCompany={experience.subtitleCompany}
                         />
