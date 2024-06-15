@@ -12,6 +12,6 @@ export type ExperienceCardType = {
     descriptionJob: string[];
     usedtechnologies :string[];
     dateIn:Date;
-    dateOut?: Date | string;
+    dateOut: Date; //caso hoje, então será atualamente
 
 }
