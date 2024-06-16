@@ -12,10 +12,10 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 export const Profile = () =>{
     const { t } = useTranslation();
     return(
-        <section className="flex flex-col justify-center min-h-dvh  pt-20  xl:flex-row  gap-6  lg:px-28 lg:flex-row w-full px-5 content-center items-center">
+        <section className="relative flex flex-col justify-center min-h-dvh  pt-20  xl:flex-row  gap-6  lg:px-28 lg:flex-row w-full px-5 content-center items-center">
             <span className="flex justify-center  xl:ml-2  lg:ml-8"><img className="shadow-sm shadow-black  rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px]   lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></span>
 
-            <div className="flex-1 flex-col  justify-center text-center xl:text-start lg:text-start">
+            <div className="relative flex-1 flex-col  justify-center  text-center xl:text-start lg:text-start">
                 <span className="w-full text-wrap flex flex-col justify-center">
                     <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl">{t("profileSection.title")}</h1>
                     <p className="mt-2 pr-4 text-sm sm:text-base md:px-16 lg:px-0 md:text-lg w-5/4 text-center lg:text-start">{t("profileSection.description")}</p> 
@@ -26,13 +26,14 @@ export const Profile = () =>{
                     <ButtonMidia clickAction={()=>{}}><SiLinkedin size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><VscGithubInverted size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><LuMail size={"30px"} /></ButtonMidia>
-                    <ButtonMidia clickAction={()=>{}}><SiSpotify size={"30px"} /></ButtonMidia>
+                    
                     
                     
                  </div>
-                 <span className="animate-bounce mt-2 sm:mt-10 md:mt-0 flex justify-center items-center lg:absolute lg:bottom-2 lg:right-1/2"><BsChevronDoubleDown size={"30px"}/></span>
+                     
             </div>
            
+            <span className="animate-bounce bottom-0 absolute lg:bottom-4   "><BsChevronDoubleDown size={"30px"}/></span>   
         </section>
     )
 }

@@ -21,7 +21,7 @@ export const About_me = () =>{
                 <p className="text-justify text-sm sm:text-base md:text-lg">{t("about-me.description")}</p>
              </div>
                         
-             <div className=" relative h-auto flex flex-row flex-wrap  justify-around py-10 gap-4 w-full items-center ">
+             <div className=" relative h-auto flex flex-row flex-wrap  justify-around py-10 gap-8 w-full items-center ">
                     {/*Linha solida lisa <hr className="absolute w-[2px] xl:left-[50%] bg-black h-full  dark:bg-white" />*/}
                     
                     {/* Linha pontilhada */}
