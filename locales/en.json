@@ -1,6 +1,24 @@
 {
-    "navLinks":{"start":"Start","about-me":"About-me","experience":"Experience","projects":"Projects","contact":"Contact"},
-    "profileSection":{"title":"What's Up? I'm Aurelio Ribeiro!","description":"Graduating in Computer Engineering, Front-End, Mobile Developer and data analysis enthusiast."},
-    "about-me":{"title":"About me","description":"Since I was a child, I used to take everything apart, trying to understand how the world works from the inside. That's where my passion for understanding how the logical circuits of my toys functioned came from, which led me to graduate in Computer Engineering at the Federal University of the São Francisco Valley. At university, I faced various challenges in the fields of hardware and software, some of which you can check out on my GitHub. Currently, I am dedicated to software development, specifically in front-end web development. I have also ventured into mobile projects (Flutter), data analysis, and artificial intelligence. Currently, I am involved with the junior company I9 and continue to improve my knowledge in React and Power BI."}
+    "navLinks":{
+        "start":"Start",
+        "about-me":"About-me",
+        "experience":"Experience",
+        "projects":"Projects",
+        "contact":"Contact"
+    },
 
+    "profileSection":{
+        "title":"What's Up? I'm Aurelio Ribeiro!",
+        "description":"Graduating in Computer Engineering, Front-End, Mobile Developer and data analysis enthusiast."
+    },
+
+    "about-me":{
+        "title":"About me",
+        "description":"Since I was a child, I used to take everything apart, trying to understand how the world works from the inside. That's where my passion for understanding how the logical circuits of my toys functioned came from, which led me to graduate in Computer Engineering at the Federal University of the São Francisco Valley. At university, I faced various challenges in the fields of hardware and software, some of which you can check out on my GitHub. Currently, I am dedicated to software development, specifically in front-end web development. I have also ventured into mobile projects (Flutter), data analysis, and artificial intelligence. Currently, I am involved with the junior company I9 and continue to improve my knowledge in React and Power BI."
+    },
+
+    "current-language":{
+        "locale":"en"
+    }
+   
 }
