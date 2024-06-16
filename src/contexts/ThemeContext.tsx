@@ -28,4 +28,4 @@ export const ThemeProvider = ({children}: {children: ReactNode})=>{
     )
 }
 
-export const useTheme= ()=> useContext(ThemeContext); //hook para ficar mais 
+export const useTheme= ()=> useContext(ThemeContext); //hook para ficar mais simples

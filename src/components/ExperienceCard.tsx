@@ -1,7 +1,11 @@
 import { ExperienceCardType } from "@/types/ExperienceCardType"
 import { ToolsComponent } from "./ToolsComponent"
+import { useTranslation } from "react-i18next";
 
 export const ExperienceCard= (experienceCardContent:ExperienceCardType)=>{
+    const { t } = useTranslation();
+    let currentLanguage;
+    t("current-language.locale")=="pt"?currentLanguage={"and":"e","currently":"atualmente","month":"mes","months":"meses","year":"ano","years":"anos"}:currentLanguage={"and":"and","currently":"currently","month":"month","months":"months","year":"year","years":"years"};
     let isCurrentJob = () => {
         // Função para saber a data de hoje
         let Today = new Date();
@@ -30,28 +34,28 @@ export const ExperienceCard= (experienceCardContent:ExperienceCardType)=>{
         // Compondo a string de retorno com base no tempo percorrido
         let timeElapsed;
         if (years === 0) {
-            timeElapsed = months + (months === 1 ? " mês" : " meses");
+            timeElapsed = months + (months === 1 ? ` ${currentLanguage.month} `: ` ${currentLanguage.months} ` );
         } else {
-            timeElapsed = years + (years === 1 ? " ano" : " anos") + " e " + months + (months === 1 ? " mês" : " meses");
+            timeElapsed = years + (years === 1 ? ` ${currentLanguage.year} `: ` ${currentLanguage.years} `) + ` ${currentLanguage.and} `+ months + (months === 1 ? ` ${currentLanguage.month} ` : ` ${currentLanguage.months} `);
         }
     
         // Retornando a string apropriada
         if (todayDateOnly.getTime() === dateOutDateOnly.getTime()) {
-            return "Atualmente - " + timeElapsed;
+            return `${currentLanguage.currently} - ` + timeElapsed;
         } else {
             return (dateOut.getMonth() + 1) + "/" + dateOut.getFullYear() + " - " + timeElapsed;
         }
     };
         
     return(
-        <div className="relative h-auto md:w-[40%] w-[400px] text-black dark:text-white bg-[#EEEE] dark:bg-[#151414] border-b-4  border-[#f7c617f6] dark:border-[#a18b32f6] dark:hover:shadow-xl shadow-xl hover:shadow-[#e0b583] transition-shadow ease-in-out  flex flex-col rounded-[20px] justify-between">
+        <div className="relative h-auto md:w-[40%] w-[400px] text-black dark:text-white bg-[#EEEE] dark:bg-[#151414] border-b-4  border-[#f7c617f6] dark:border-[#a18b32f6]  hover:shadow-xl shadow-xl hover:shadow-[#e0b583] dark:hover:shadow-[#f7c71723]  transition-shadow ease-in-out  flex flex-col rounded-[20px] justify-between">
             <div className="m-3">
                  <div className=" flex flex-row p-2">
                     <img className="rounded-sm mr-2 h-20 " src={experienceCardContent.logoCompany?.src} alt="" />
                     <div className="flex flex-col gap-[2px]">
                         <h1 className="text-xl sm:text-2xl font-bold ">{experienceCardContent.titleCompany}</h1>
                         <h3 className="text-[12px] sm:text-sm">{experienceCardContent.subtitleCompany}</h3>
-                        <h6 className="text-[10px] sm:text-xs text-gray-700 dark:text-yellow-100 ">{ experienceCardContent.dateIn.getMonth()+"/"+experienceCardContent.dateIn.getFullYear()+" - "+ isCurrentJob()}</h6>
+                        <h6 className="text-[10px] sm:text-xs text-gray-700 dark:text-gray-400 ">{ experienceCardContent.dateIn.getMonth()+"/"+experienceCardContent.dateIn.getFullYear()+" - "+ isCurrentJob()}</h6>
                     </div>
                  </div>
 
