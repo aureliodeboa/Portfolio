@@ -5,6 +5,7 @@ import { ButtonMidia } from "../ButtonMidia";
 import { BsDownload } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import imageProfile from "@/assets/images/profile.jpg"
+import { BsChevronDoubleDown } from "react-icons/bs";
 
 
 
@@ -12,7 +13,7 @@ export const Profile = () =>{
     const { t } = useTranslation();
     return(
         <section className="flex flex-col justify-center min-h-dvh  pt-20  xl:flex-row  gap-6  lg:px-28 lg:flex-row w-full px-5 content-center items-center">
-            <span className="flex justify-center  xl:ml-2  lg:ml-8"><img className="drop-shadow-xl  rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px] mt-10 md:mt-10 lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></span>
+            <span className="flex justify-center  xl:ml-2  lg:ml-8"><img className="shadow-sm shadow-black  rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px]   lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></span>
 
             <div className="flex-1 flex-col  justify-center text-center xl:text-start lg:text-start">
                 <span className="w-full text-wrap flex flex-col justify-center">
@@ -29,7 +30,9 @@ export const Profile = () =>{
                     
                     
                  </div>
+                 <span className="animate-bounce mt-2 sm:mt-10 md:mt-0 flex justify-center items-center lg:absolute lg:bottom-2 lg:right-1/2"><BsChevronDoubleDown size={"30px"}/></span>
             </div>
+           
         </section>
     )
 }

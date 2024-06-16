@@ -2,6 +2,7 @@ import { ExperienceCardType } from "@/types/ExperienceCardType";
 import i9logo from "@/assets/images/logo_i9.png"
 import ebserhlogo from "@/assets/images/ebserh_Logo.png"
 import facepelogo from "@/assets/images/facepe_logo.png"
+
 //dados das exeperinecias, detalhe importante é que os meses começam no 0 
 export const experienceData_pt: ExperienceCardType[]= [
 {
