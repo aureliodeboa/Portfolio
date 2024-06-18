@@ -18,7 +18,7 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        debug:true,
+        debug:false,
         lng: 'pt',
         fallbackLng: 'en',//caso o idioma padrao não esteja disponivel
         interpolation:{
