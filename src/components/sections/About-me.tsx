@@ -17,7 +17,7 @@ export const About_me = () =>{
         <section className="flex flex-col items-center w-full pt-8  h-auto gap-8  justify-around border-t-[1px] border-gray-800 border-solid ">
            
              <div className="h-1/2 px-4 sm:px-10 md:px-20  ">
-                <h1 className="py-5 text-2xl">{t("about-me.title")}</h1>
+                <h1 className="py-5 text-2xl md:text-4xl font-bold">{t("about-me.title")}</h1>
                 <p className="text-justify text-sm sm:text-base md:text-lg">{t("about-me.description")}</p>
              </div>
                         
