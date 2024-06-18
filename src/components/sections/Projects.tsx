@@ -56,7 +56,7 @@ export const Projects = () => {
   const { t } = useTranslation();
    
   let currentProjectData;
-  t("current-language.locale")=="pt"?currentProjectData=projectData_pt:projectData_en;
+  t("current-language.locale")=="pt"?currentProjectData=projectData_pt:currentProjectData=projectData_en;
  
 
   return (
