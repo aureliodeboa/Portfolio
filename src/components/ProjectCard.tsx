@@ -15,7 +15,7 @@ export const ProjectCard = (projectCardContent:projectType) =>{
            <div className="p-3 flex flex-row gap-2 flex-wrap w-full items-center justify-center">
             {
                   projectCardContent.usedtechnologies.map((usedTechnologie,index)=>(
-                    <ToolsComponent id={index} label={usedTechnologie}/>
+                    <ToolsComponent id={index}  key={index} label={usedTechnologie}/>
                   ))
             }
               
