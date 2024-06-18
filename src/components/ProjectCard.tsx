@@ -14,8 +14,8 @@ export const ProjectCard = (projectCardContent:projectType) =>{
            <p className="text-xs sm:text-sm px-2 md:text-base md:px-6 text-justify">{projectCardContent.description}</p>
            <div className="p-3 flex flex-row gap-2 flex-wrap w-full items-center justify-center">
             {
-                  projectCardContent.usedtechnologies.map((usedTechnologie)=>(
-                    <ToolsComponent label={usedTechnologie}/>
+                  projectCardContent.usedtechnologies.map((usedTechnologie,index)=>(
+                    <ToolsComponent id={index} label={usedTechnologie}/>
                   ))
             }
               

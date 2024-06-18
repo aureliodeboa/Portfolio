@@ -48,7 +48,7 @@ export const ExperienceCard= (experienceCardContent:ExperienceCardType)=>{
     };
         
     return(
-        <div className="relative h-auto md:w-[40%] w-[400px] text-black dark:text-white bg-[#EEEE] dark:bg-[#151414] border-b-4  border-[#f7c617f6] dark:border-[#a18b32f6]  hover:shadow-xl shadow-xl hover:shadow-[#e0b583] dark:hover:shadow-[#f7c71723]  transition-shadow ease-in-out  flex flex-col rounded-[20px] justify-between">
+        <div key={experienceCardContent.id} className="relative h-auto md:w-[40%] w-[400px] text-black dark:text-white bg-[#EEEE] dark:bg-[#151414] border-b-4  border-[#f7c617f6] dark:border-[#a18b32f6]  hover:shadow-xl shadow-xl hover:shadow-[#e0b583] dark:hover:shadow-[#f7c71723]  transition-shadow ease-in-out  flex flex-col rounded-[20px] justify-between">
             <div className="m-3">
                  <div className=" flex flex-row p-2">
                     <img className="rounded-sm mr-2 h-20 " src={experienceCardContent.logoCompany?.src} alt="" />
@@ -76,8 +76,8 @@ export const ExperienceCard= (experienceCardContent:ExperienceCardType)=>{
             <div className="flex flex-row flex-wrap gap-2 justify-center items-center bottom-8 p-4 ">
 
                     {
-                        experienceCardContent.usedtechnologies.map((usedTechnologie)=>(
-                            <ToolsComponent label={usedTechnologie}/>
+                        experienceCardContent.usedtechnologies.map((usedTechnologie,index)=>(
+                            <ToolsComponent key={index} id={index} label={usedTechnologie}/>
                         ))
                     }
                   

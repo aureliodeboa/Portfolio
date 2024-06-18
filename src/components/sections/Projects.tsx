@@ -85,8 +85,8 @@ export const Projects = () => {
 
           >
             {
-               currentProjectData?.map((projectData)=>(
-                <SwiperSlide>
+               currentProjectData?.map((projectData, index)=>(
+                <SwiperSlide key={index}>
                   <ProjectCard id={projectData.id} title={projectData.title} description={projectData.description} linkGithub={projectData.linkGithub}
                    usedtechnologies={projectData.usedtechnologies} imageProject={projectData.imageProject} urlProject={projectData.urlProject} />
                 </SwiperSlide>
