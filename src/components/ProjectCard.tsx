@@ -1,18 +1,23 @@
+import { projectType } from "@/types/projectType"
 import { ToolsComponent } from "./ToolsComponent"
-import coleman from"@/assets/images/RonieColeman.png"
 
-export const ProjectCard = () =>{
+
+export const ProjectCard = (projectCardContent:projectType) =>{
     return(
-        <div className="h-auto w-[450px] flex  items-center flex-col  border-b-2  border-[#fff]  text-black dark:text-white bg-[#EEEE] dark:bg-[#151414]    gap-3 rounded-lg">
-           <span><img className="p-6 rounded-lg  " src={coleman.src} alt="Imagem do Ronie Coleman" /></span>
-           <a href="https://github.com/aureliodeboa/Tribute-Ronnie-Coleman?tab=readme-ov-file" rel="noopener" target="_blank">
-                <h1 className="text-3xl font-bold hover:text-[#AAA]">Tribute  Ronnie Coleman</h1>
+        <div className="h-auto w-[90%]  md:w-[450px]  flex mx-3
+          items-center flex-col  border-b-2  border-[#fff]  text-black dark:text-white bg-[#EEE] dark:bg-[#151414]    gap-3 rounded-lg">
+           <a href={projectCardContent.urlProject} rel="noopener" target="_blank"><img className="p-3 md:p-6 rounded-lg  " src={projectCardContent.imageProject?.src} alt="Imagem " /></a>
+           <a href={projectCardContent.linkGithub} rel="noopener" target="_blank">
+
+                <h1 className="text-sm sm:text-lg text-center px-3 md:text-3xl font-bold hover:text-[#AAA]">{projectCardContent.title}</h1>
             </a>
-           <p className="px-6 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis corporis officia quas ipsam possimus unde deserunt omnis fuga aliquid, ipsum tempora id blanditiis ad minima voluptates assumenda illo, earum qui.</p>
+           <p className="text-xs sm:text-sm px-2 md:text-base md:px-6 text-justify">{projectCardContent.description}</p>
            <div className="p-3 flex flex-row gap-2 flex-wrap w-full items-center justify-center">
-                <ToolsComponent label={"HTML"}/>
-                <ToolsComponent label={"CSS"}/>
-                <ToolsComponent label={"Git"}/>
+            {
+                  projectCardContent.usedtechnologies.map((usedTechnologie)=>(
+                    <ToolsComponent label={usedTechnologie}/>
+                  ))
+            }
               
            </div>
         </div>
