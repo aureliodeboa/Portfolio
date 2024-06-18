@@ -31,3 +31,21 @@ body {
     text-wrap: balance;
   }
 }
+/* Personalização das bolinhas dos cards dos projetos*/
+
+/* target all bullets */
+.swiper-pagination-bullet {
+  background-color: rgb(71, 69, 69) !important;
+  opacity: 1;
+}
+
+/* target all bullets */
+.dark .swiper-pagination-bullet {
+  background-color: rgb(110, 110, 110) !important;
+  opacity: 1;
+}
+
+.dark span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: rgb(255, 255, 255) !important;
+  opacity: 1;
+}
