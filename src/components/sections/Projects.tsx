@@ -17,17 +17,22 @@ import { projectData_en } from "@/assets/data/projectsData-en";
 
 export const Projects = () => {
   //função para pegar o tamanho da tela e retornar a quantidade dos cards
+
   const getSlidesPerView = () => {
-    if (window.innerWidth > 1720) {
+    
+    if (typeof window !== "undefined") {
+      if (window.innerWidth > 1720) {
       
-      return 4;
-    } else if (window.innerWidth > 1000) {
-      return 3;
-    } else if (window.innerWidth > 600) {
-      return 2;
-    } else {
-      return 1;
+        return 4;
+      } else if (window.innerWidth > 1000) {
+        return 3;
+      } else if (window.innerWidth > 600) {
+        return 2;
+      } else {
+        return 1;
+      }
     }
+   
   };
 
   //useState para a quantidade de cards  que seram mostrados 
