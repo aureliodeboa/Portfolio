@@ -27,24 +27,15 @@ export const projectData_en: projectType[] = [
     },
     {
         id: 3,
-        imageProject: imgSibi,
-        title: "SIBI in the Palm of Your Hand",
-        description: "SIBI (Integrated Libraries System of UNIVASF) is an application developed using the Flutter framework. It serves as a user guide for the library system of the Federal University of Vale do São Francisco (UNIVASF), offering quick and intuitive access to SIBI information.",
-        linkGithub: "https://github.com/aureliodeboa/AplicativoSIBI?tab=readme-ov-file",
-        usedtechnologies: ["Flutter", "Dart", "Scrum", "Git"],
-        urlProject: "https://www.youtube.com/watch?v=p7WKsB0vFxk&feature=youtu.be"
+        imageProject: imgStarbuks,
+        title: "Starbucks",
+        description: "This is a Starbucks homepage project developed to practice CSS grid-template property skills. In this project, I used only HTML and CSS to create a simple replica of the Starbucks homepage.",
+        linkGithub: "https://github.com/aureliodeboa/Starbucks?tab=readme-ov-file",
+        usedtechnologies: ["Html", "Css", "Git"],
+        urlProject: "https://inquisitive-cendol-2fd1cd.netlify.app/"
     },
     {
         id: 4,
-        imageProject: imgQuizReact,
-        title: "Quiz App",
-        description: "This project is a Quiz application developed with React, Next.js, Tailwind CSS, and TypeScript. It allows users to answer a series of questions and displays correct and incorrect alternatives at the end.",
-        linkGithub: "https://github.com/aureliodeboa/Quiz-app?tab=readme-ov-file",
-        usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Html", "Git"],
-        urlProject: "https://fastidious-kangaroo-7e1acc.netlify.app/"
-    },
-    {
-        id: 5,
         imageProject: imgTodoReact,
         title: "To-Do List",
         description: "This is a simple To-Do List project developed using React, Next.js, and TypeScript. The application allows users to add, mark as completed, and remove tasks from the list.",
@@ -53,12 +44,22 @@ export const projectData_en: projectType[] = [
         urlProject: "https://master--gentle-snickerdoodle-46b5f2.netlify.app/"
     },
     {
+        id: 5,
+        imageProject: imgQuizReact,
+        title: "Quiz App",
+        description: "This project is a Quiz application developed with React, Next.js, Tailwind CSS, and TypeScript. It allows users to answer a series of questions and displays correct and incorrect alternatives at the end.",
+        linkGithub: "https://github.com/aureliodeboa/Quiz-app?tab=readme-ov-file",
+        usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Html", "Git"],
+        urlProject: "https://fastidious-kangaroo-7e1acc.netlify.app/"
+    },    
+    {
         id: 6,
-        imageProject: imgStarbuks,
-        title: "Starbucks",
-        description: "This is a Starbucks homepage project developed to practice CSS grid-template property skills. In this project, I used only HTML and CSS to create a simple replica of the Starbucks homepage.",
-        linkGithub: "https://github.com/aureliodeboa/Starbucks?tab=readme-ov-file",
-        usedtechnologies: ["Html", "Css", "Git"],
-        urlProject: "https://inquisitive-cendol-2fd1cd.netlify.app/"
-    }
+        imageProject: imgSibi,
+        title: "SIBI in the Palm of Your Hand",
+        description: "SIBI (Integrated Libraries System of UNIVASF) is an application developed using the Flutter framework. It serves as a user guide for the library system of the Federal University of Vale do São Francisco (UNIVASF), offering quick and intuitive access to SIBI information.",
+        linkGithub: "https://github.com/aureliodeboa/AplicativoSIBI?tab=readme-ov-file",
+        usedtechnologies: ["Flutter", "Dart", "Scrum", "Git"],
+        urlProject: "https://www.youtube.com/watch?v=p7WKsB0vFxk&feature=youtu.be"
+    },
+   
 ];
