@@ -17,8 +17,9 @@ const Page = () =>{
       <Container>
         <Navbar/>
         <Profile/>
-        <About_me/>
         <Projects/>
+        <About_me/>
+      
       </Container>
     </ThemeProvider>
 
