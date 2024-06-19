@@ -19,7 +19,7 @@ export const About_me = () =>{
            
              <div className="h-1/2 px-4 sm:px-10 md:px-20  ">
                 <h1 className="py-5 text-2xl md:text-3xl font-bold">{t("about-me.title")}</h1>
-                <p className="text-justify text-sm sm:text-base md:text-lg"><ExpandableText text={t("about-me.description")}  maxLength={300} /></p>
+                <ExpandableText text={t("about-me.description")}  maxLength={250} />
              </div>
                         
              <div className=" relative h-auto flex flex-row flex-wrap  justify-around py-10 gap-8 w-full items-center ">

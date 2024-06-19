@@ -14,7 +14,7 @@ const ExpandableText: React.FC<ExpandableTextProps> = ({ text, maxLength }) => {
 
   return (
     <div className="text-container">
-      <p className="text">
+      <p className="text-justify text-sm sm:text-base md:text-lg">
         {isExpanded ? text : `${text.substring(0, maxLength)}...`}
       </p>
       <button onClick={toggleExpand} className="text-yellow-500  hover:animate-pulse">
