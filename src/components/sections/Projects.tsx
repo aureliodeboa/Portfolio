@@ -63,9 +63,9 @@ export const Projects = () => {
   return (
     <div className="h-auto py-8 flex flex-col items-center  w-full">
       <div className="h-auto w-full ">
-        <h1 className="text-2xl md:text-4xl px-5 md:px-10 font-bold text-left">Projetos</h1>
+        <h1 className="text-2xl md:text-4xl px-5 md:px-10 font-bold text-left">{t("projects.title")}</h1>
         <h6 className="pt-5  px-5 md:px-10 text-base text-left">
-          Esses são alguns dos meus projetos pessoais que estão disponíveis no GitHub, ao clicar na imagem você será redirecionado para o site do projeto e ao clicar no titulo você irá para o repositorio.
+        {t("projects.description")}
         </h6>
         <div className="flex justify-center h-auto items-center w-full mt-6">
           <Swiper

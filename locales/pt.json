@@ -10,6 +10,11 @@
         "title":"E aí? eu sou Aurelio Ribeiro!",
         "description":"Graduando em Engenharia da computação, Desenvolvedor Front-End, Mobile e entusiasta na análise de dados."
     },
+    "projects": {
+        "title":"Projetos",
+        "description":"Esses são alguns dos meus projetos pessoais que estão disponíveis no GitHub, ao clicar na imagem você será redirecionado para o site do projeto e ao clicar no titulo você irá para o repositorio."
+        
+    },
     "about-me":{
         "title":"Sobre mim",
         "description":"Desde criança, eu desmontava tudo, tentando entender como o mundo funcionava por dentro. Daí surgiu minha paixão por compreender como os circuitos lógicos dos meus brinquedos funcionavam, o que me impulsionou a me graduar em Engenharia da Computação na Universidade Federal do Vale do São Francisco. Na universidade, enfrentei diversos desafios nas áreas de hardware e software, alguns dos quais você pode conferir no meu GitHub. No momento, me dedico ao desenvolvimento de software, mais precisamente ao front-end do desenvolvimento web. Já me aventurei em projetos de mobile (Flutter), análise de dados e inteligência artificial.Atualmente, estou envolvido com a empresa júnior I9 e continuo aprimorando meus conhecimentos em React e Power BI."

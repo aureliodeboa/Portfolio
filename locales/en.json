@@ -11,6 +11,11 @@
         "title":"What's Up? I'm Aurelio Ribeiro!",
         "description":"Graduating in Computer Engineering, Front-End, Mobile Developer and data analysis enthusiast."
     },
+    "projects": {
+        "title":"Projects",
+        "description":"Here are some of my personal projects available on GitHub. By clicking on the image, you will be redirected to the project website, and by clicking on the title, you will go to the repository."
+        
+    },
 
     "about-me":{
         "title":"About me",
