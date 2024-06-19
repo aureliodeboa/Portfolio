@@ -11,7 +11,7 @@ export const ProjectCard = (projectCardContent:projectType) =>{
 
                 <h1 className="text-sm sm:text-lg text-center px-3 md:text-3xl font-bold hover:text-[#AAA]">{projectCardContent.title}</h1>
             </a>
-           <p className="text-xs sm:text-sm px-2 md:text-base md:px-6 text-justify">{projectCardContent.description}</p>
+           <p className="text-xs sm:text-sm px-4 md:text-base md:px-6 text-justify">{projectCardContent.description}</p>
            <div className="p-3 flex flex-row gap-2 flex-wrap w-full items-center justify-center">
             {
                   projectCardContent.usedtechnologies.map((usedTechnologie,index)=>(
