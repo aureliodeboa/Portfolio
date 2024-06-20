@@ -7,6 +7,8 @@ import '../i18nify';
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { About_me } from "@/components/sections/About-me";
 import { Projects } from "@/components/sections/Projects";
+import { Contact } from "@/components/sections/Contact";
+
 
 
 
@@ -19,7 +21,7 @@ const Page = () =>{
         <Profile/>
         <Projects/>
         <About_me/>
-      
+        <Contact/>
       </Container>
     </ThemeProvider>
 
