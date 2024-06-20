@@ -8,6 +8,8 @@ interface ExpandableTextProps {
 
 const ExpandableText: React.FC<ExpandableTextProps> = ({ text, maxLength }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  
+  //isso aqui ta seboso
   const { t } = useTranslation();
     let currentLanguage;
     t("current-language.locale")=="pt"?currentLanguage={"see_less":"Ver menos","see_more":"Ver Mais"}:currentLanguage={"see_less":"See less","see_more":"See more"};
