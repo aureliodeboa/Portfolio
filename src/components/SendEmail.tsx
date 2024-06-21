@@ -35,11 +35,11 @@ export const SendEmail = () =>{
     }
   
     return (
-      <div className="flex flex-col h-full w-1/2 justify-between text-justify py-4  dark:text-white text-black">
+      <div className="flex flex-col h-full w-full md:w-1/2 justify-between text-justify py-4  	 dark:text-white text-black">
          
-        <form className="form flex flex-col h-full gap-4 content-center " onSubmit={handleSendEmail}>
+        <form className="form flex flex-col h-full gap-4 content-center  " onSubmit={handleSendEmail}>
           <input 
-            className="input h-14 p-4 rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px]"
+            className="input h-14 p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px]"
             type="text"
             placeholder="Digite seu nome"
             onChange={(e) => setName(e.target.value)}
@@ -47,7 +47,7 @@ export const SendEmail = () =>{
           />
           
           <input 
-            className="input input h-14 p-4 rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px]"
+            className="input input h-14 p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px]"
             type="text"
             placeholder="Digite seu email"
             onChange={(e) => setEmail(e.target.value)}
@@ -55,7 +55,7 @@ export const SendEmail = () =>{
           />
   
           <textarea 
-            className="textarea input h-[100%] p-4 rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px] resize-none  "
+            className="textarea input h-[100%] p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px] resize-none  "
             placeholder="Digite sua mensagem..."
             onChange={(e) => setMessage(e.target.value)}
             value={message}
