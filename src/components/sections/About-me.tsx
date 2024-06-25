@@ -15,14 +15,14 @@ export const About_me = () =>{
     t("current-language.locale")=="pt"?experienceData=experienceData_pt:experienceData=experienceData_en;
     
     return(
-        <section className="flex flex-col items-center w-full pt-8  h-auto gap-8  justify-around border-t-[1px] border-gray-800 border-solid ">
+        <section  id="about-me" className="flex flex-col items-center w-full pt-8  h-auto gap-8  justify-around border-t-[1px] border-gray-800 border-solid ">
            
              <div className="h-1/2 px-4 sm:px-10 md:px-20  ">
                 <h1 className="py-5 text-2xl md:text-3xl font-bold">{t("about-me.title")}</h1>
                 <ExpandableText text={t("about-me.description")}  maxLength={250} />
              </div>
                         
-             <div className=" relative h-auto flex flex-row flex-wrap  justify-around py-10 gap-8 w-full items-center ">
+             <div id="experience" className=" relative h-auto flex flex-row flex-wrap  justify-around py-10 gap-8 w-full items-center ">
                     {/*Linha solida lisa <hr className="absolute w-[2px] xl:left-[50%] bg-black h-full  dark:bg-white" />*/}
                     
                     {/* Linha pontilhada */}

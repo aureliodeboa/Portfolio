@@ -10,11 +10,12 @@ import { IoIosMenu, IoMdClose } from "react-icons/io"
 export const Navbar =()=> {
     const { t } = useTranslation();
     let Links= [
-        {name:t("navLinks.start"), _onClink:()=>{}},
-        {name:t("navLinks.about-me"), _onClink:()=>{}},
-        {name:t("navLinks.experience"), _onClink:()=>{}},
-        {name:t("navLinks.projects"), _onClink:()=>{}},
-        {name:t("navLinks.contact"), _onClink:()=>{}},
+        {name:t("navLinks.start"), _onClink:()=>document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' }) },
+        {name:t("navLinks.about-me"), _onClink:()=>document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' }) },
+        {name:t("navLinks.experience"), _onClink:()=>document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }) },
+        {name:t("navLinks.projects"), _onClink:()=>document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) },
+        {name:t("navLinks.contact"), _onClink:()=> document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
+       
     ]
     let[openMenu,setOpenMenu]=useState(false);
 

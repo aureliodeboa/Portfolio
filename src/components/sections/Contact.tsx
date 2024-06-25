@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 export const Contact = () =>{
     const { t } = useTranslation();
     return(
-        <section className="h-screen w-full flex items-center justify-center">
+        <section  id="contact" className="h-screen w-full flex items-center justify-center">
                 <div className="h-dvh w-[98%] flex flex-col md:flex-row border-black dark:border-white  rounded-3xl border-[2px]  py-6 px-10 ">
                     <div className="flex flex-col h-auto  md:w-1/2  text-justify py-4  gap-4">
                         <h1 className=" text-2xl md:text-3xl font-bold ">{t("contact.title")}</h1>

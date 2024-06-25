@@ -61,7 +61,7 @@ export const Projects = () => {
  
 
   return (
-    <div className="h-auto py-8 flex flex-col items-center  w-full">
+    <div id="projects" className="h-auto py-8 flex flex-col items-center  w-full">
       <div className="h-auto w-full ">
         <h1 className="text-2xl md:text-4xl px-5 md:px-10 font-bold text-left">{t("projects.title")}</h1>
         <h6 className="pt-5  px-5 md:px-10 text-base text-left">
