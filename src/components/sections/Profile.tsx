@@ -18,11 +18,12 @@ export const Profile = () =>{
             <div className="relative flex-1 flex-col  justify-center  text-center xl:text-start lg:text-start">
                 <span className="w-full text-wrap flex flex-col justify-center">
                     <h1 className="font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl">{t("profileSection.title")}</h1>
+                    <h3 className="font-medium text-lg sm:text-xl md:text-2xl lg:text-2xl">{t("profileSection.subtitle")}</h3>
                     <p className="mt-2 pr-4 text-sm sm:text-base md:px-16 lg:px-0 md:text-lg w-5/4 text-center lg:text-start">{t("profileSection.description")}</p> 
                 </span>
 
                 <div className="flex flex-row justify-center lg:justify-start  items-center mr-1 h-20 w-full">
-                    <ButtonMidia clickAction={()=>{}}><span className="h-[30px] sm:flex flex-row justify-around hidden p-1 mr-1">Curriculo</span><span className=" mt-[2px] sm:size-[25px] flex justify-center items-center"><BsDownload size={"27px"} /></span></ButtonMidia>
+                    <ButtonMidia clickAction={()=>{}}><span className="h-[30px] sm:flex flex-row justify-around hidden p-1 mr-1">{t("profileSection.curriculum")}</span><span className=" mt-[2px] sm:size-[25px] flex justify-center items-center"><BsDownload size={"27px"} /></span></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><SiLinkedin size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><VscGithubInverted size={"30px"} /></ButtonMidia>
                     <ButtonMidia clickAction={()=>{}}><LuMail size={"30px"} /></ButtonMidia>

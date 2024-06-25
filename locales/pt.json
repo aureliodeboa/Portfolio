@@ -7,8 +7,10 @@
         "contact":"Contato"
     },
     "profileSection":{
-        "title":"E aí? eu sou Aurelio Ribeiro!",
-        "description":"Graduando em Engenharia da computação, Desenvolvedor Front-End, Mobile e entusiasta na análise de dados."
+        "title":"Aurélio Ribeiro",
+        "subtitle":"Desenvolvedor Front-End e Mobile",
+        "description":"Graduando em Engenharia da computação e entusiasta na análise de dados.",
+        "curriculum":"Curriculo"
     },
     "projects": {
         "title":"Projetos",
@@ -21,6 +23,15 @@
     },
     "current-language":{
         "locale":"pt"
+    },
+    "contact":{
+        "title":"Contato",
+        "description":"Vamos ao trabalho? Você pode entrar em contato comigo pelo formulário ou pelas redes sociais abaixo.",
+        "form":{
+            "name":"Digite seu nome",
+            "email":"Digite seu email",
+            "message":"Digite sua mensagem..."
+        }
     }
 
 
