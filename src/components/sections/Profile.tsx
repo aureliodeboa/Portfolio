@@ -9,8 +9,33 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 
 
 
+
 export const Profile = () =>{
     const { t } = useTranslation();
+
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = '/aurelio_ribeiro.pdf';
+        link.target = '_blank';
+        link.download = 'aurelio_ribeiro.pdf'; // O nome que o arquivo terá ao ser baixado
+        link.click();
+
+        // Remover o link temporário
+        URL.revokeObjectURL(link.href);
+      };
+    
+      const handleLinkedIn = () => {
+        window.open('https://www.linkedin.com/in/aurelioribeiro/', '_blank');
+      };
+    
+      const handleGitHub = () => {
+        window.open('https://github.com/aureliodeboa', '_blank');
+      };
+    
+      const handleEmail = () => {
+        window.location.href = 'mailto:aurelio74123@gmail.com';
+      };
+    
     return(
         <section id='home' className="relative flex flex-col justify-center min-h-dvh  pt-20  xl:flex-row  gap-6  lg:px-28 lg:flex-row w-full px-5 content-center items-center">
             <span className="flex justify-center  xl:ml-2  lg:ml-8"><img className="shadow-sm shadow-black  dark:shadow-yellow-600 rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px]   lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></span>
@@ -23,10 +48,10 @@ export const Profile = () =>{
                 </span>
 
                 <div className="flex flex-row justify-center lg:justify-start  items-center mr-1 h-20 w-full">
-                    <ButtonMidia clickAction={()=>{}}><span className="h-[30px] sm:flex flex-row justify-around hidden p-1 mr-1">{t("profileSection.curriculum")}</span><span className=" mt-[2px] sm:size-[25px] flex justify-center items-center"><BsDownload size={"27px"} /></span></ButtonMidia>
-                    <ButtonMidia clickAction={()=>{}}><SiLinkedin size={"30px"} /></ButtonMidia>
-                    <ButtonMidia clickAction={()=>{}}><VscGithubInverted size={"30px"} /></ButtonMidia>
-                    <ButtonMidia clickAction={()=>{}}><LuMail size={"30px"} /></ButtonMidia>
+                    <ButtonMidia clickAction={handleDownload}><span className="h-[30px] sm:flex flex-row justify-around hidden p-1 mr-1">{t("profileSection.curriculum")}</span><span className=" mt-[2px] sm:size-[25px] flex justify-center items-center"><BsDownload size={"27px"} /></span></ButtonMidia>
+                    <ButtonMidia clickAction={handleLinkedIn}><SiLinkedin size={"30px"} /></ButtonMidia>
+                    <ButtonMidia clickAction={handleGitHub}><VscGithubInverted size={"30px"} /></ButtonMidia>
+                    <ButtonMidia clickAction={handleEmail}><LuMail size={"30px"} /></ButtonMidia>
                     
                     
                     
