@@ -6,12 +6,18 @@ import { BsDownload } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import imageProfile from "@/assets/images/profile.jpg"
 import { BsChevronDoubleDown } from "react-icons/bs";
+import { useEffect } from "react";
 
 
 
 
 export const Profile = () =>{
     const { t } = useTranslation();
+    //para que quando a pagina abra ela vá para o inicio
+    useEffect(() => {
+      // Scroll to top when component mounts
+      window.scrollTo(0, 0);
+    }, []);
 
     const handleDownload = () => {
         const link = document.createElement('a');
