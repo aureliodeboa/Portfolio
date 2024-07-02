@@ -11,11 +11,11 @@ export const Navbar =()=> {
     const { t } = useTranslation();
     let Links= [
         {name:t("navLinks.start"), _onClink:()=>document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' }) },
-        {name:t("navLinks.about-me"), _onClink:()=>document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' }) },
-        {name:t("navLinks.experience"), _onClink:()=>document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }) },
-        {name:t("navLinks.projects"), _onClink:()=>document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) },
-        {name:t("navLinks.contact"), _onClink:()=> document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
-       
+        {name:t("navLinks.projects"), _onClink:()=>document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start'  }) },
+        {name:t("navLinks.about-me"), _onClink:()=>document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth', block: 'start'  }) },
+        {name:t("navLinks.experience"), _onClink:()=>document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth', block: 'start'  }) },
+        {name:t("navLinks.contact"), _onClink:()=> document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start'  }) },
+
     ]
     let[openMenu,setOpenMenu]=useState(false);
 

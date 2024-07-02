@@ -24,7 +24,7 @@ export const Projects = () => {
     if (typeof window !== "undefined") {
       if (window.innerWidth > 1720) {
       
-        return 4;
+        return 3;
       } else if (window.innerWidth > 1000) {
         return 3;
       } else if (window.innerWidth > 600) {
@@ -61,12 +61,10 @@ export const Projects = () => {
  
 
   return (
-    <div id="projects" className="h-auto py-8 flex flex-col items-center  w-full">
-      <div className="h-auto w-full ">
-        <h1 className="text-2xl md:text-4xl px-5 md:px-10 font-bold text-left">{t("projects.title")}</h1>
-        <h6 className="pt-5  px-5 md:px-10 text-base text-left">
-        {t("projects.description")}
-        </h6>
+    <section id="projects" className="h-auto py-8 flex flex-col items-center  w-full">
+      <div className="mt-7 h-auto w-full ">
+        <h1 className="text-2xl md:text-4xl px-6 md:px-10 font-bold text-left">{t("projects.title")}</h1>
+        <h6 className="pt-5  px-5 md:px-10 text-base text-left">{t("projects.description")}</h6>
         <div className="flex justify-center h-auto items-center w-full mt-6">
           <Swiper
             modules={[Pagination, EffectCoverflow]}
@@ -102,7 +100,7 @@ export const Projects = () => {
           </Swiper>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

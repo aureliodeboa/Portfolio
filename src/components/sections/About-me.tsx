@@ -15,7 +15,7 @@ export const About_me = () =>{
     t("current-language.locale")=="pt"?experienceData=experienceData_pt:experienceData=experienceData_en;
     
     return(
-        <section  id="about-me" className="flex flex-col items-center w-full pt-8  h-auto gap-8  justify-around border-t-[1px] border-gray-800 border-solid ">
+        <section  id="about-me" className="flex flex-col items-center w-full  pt-12  h-auto gap-8  justify-around border-t-[1px] border-gray-800 border-solid ">
            
              <div className="h-1/2 px-4 sm:px-10 md:px-20  ">
                 <h1 className="py-5 text-2xl md:text-3xl font-bold">{t("about-me.title")}</h1>
