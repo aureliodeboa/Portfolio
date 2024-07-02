@@ -11,6 +11,7 @@ import { useEffect } from "react";
 
 
 
+
 export const Profile = () =>{
     const { t } = useTranslation();
     //para que quando a pagina abra ela vá para o inicio
@@ -21,7 +22,7 @@ export const Profile = () =>{
 
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = '/aurelio_ribeiro.pdf';
+        link.href = "@/assets/data/aurelio_ribeiro.pdf" 
         link.target = '_blank';
         link.download = 'aurelio_ribeiro.pdf'; // O nome que o arquivo terá ao ser baixado
         link.click();
