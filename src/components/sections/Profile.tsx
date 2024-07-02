@@ -22,8 +22,8 @@ export const Profile = () =>{
 
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = "/Portfolio/aurelio_ribeiro.pdf"
-        link.download = 'aurelio_ribeiro.pdf'; // O nome que o arquivo terá ao ser baixado
+        link.href = "https://aureliodeboa.github.io/Portfolio/aurelio_ribeiro.pdf"// O nome que o arquivo terá ao ser baixado
+        link.target = '_blank';
         link.click();
 
         // Remover o link temporário
