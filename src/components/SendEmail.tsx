@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { useTranslation } from "react-i18next";
 import emailjs from '@emailjs/browser';
 
 export const SendEmail = () =>{
@@ -33,6 +34,7 @@ export const SendEmail = () =>{
         })
 
     }
+    const { t } = useTranslation();
   
     return (
       <div className="flex flex-col h-full w-full md:w-1/2 justify-between text-justify py-4  	 dark:text-white text-black">
@@ -41,7 +43,7 @@ export const SendEmail = () =>{
           <input 
             className="input h-14 p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px]"
             type="text"
-            placeholder="Digite seu nome"
+            placeholder={t("contact.form.name")}
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
@@ -49,14 +51,14 @@ export const SendEmail = () =>{
           <input 
             className="input input h-14 p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px]"
             type="text"
-            placeholder="Digite seu email"
+            placeholder={t("contact.form.email")}
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
   
           <textarea 
             className="textarea input h-[100%] p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px] resize-none  "
-            placeholder="Digite sua mensagem..."
+            placeholder={t("contact.form.message")}
             onChange={(e) => setMessage(e.target.value)}
             value={message}
 

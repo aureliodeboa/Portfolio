@@ -8,8 +8,10 @@
     },
 
     "profileSection":{
-        "title":"What's Up? I'm Aurelio Ribeiro!",
-        "description":"Graduating in Computer Engineering, Front-End, Mobile Developer and data analysis enthusiast."
+        "title":"Aurélio Ribeiro",
+        "subtitle":"Front-End and Mobile Developer",
+        "description":"Graduating in Computer Engineering and data analysis enthusiast.",
+        "curriculum":"Curriculum"
     },
     "projects": {
         "title":"Projects",
@@ -24,6 +26,16 @@
 
     "current-language":{
         "locale":"en"
+    },
+    "contact":{
+        "title":"Contact",
+        "description":"Let's go to work? You can contact me using the form or social media below.",
+        "form":{
+            "name":"Enter your name",
+            "email":"Enter your email",
+            "message":"Enter your message..."
+        }
+            
     }
    
 }
