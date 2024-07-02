@@ -22,8 +22,7 @@ export const Profile = () =>{
 
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = "@/assets/data/aurelio_ribeiro.pdf" 
-        link.target = '_blank';
+        link.href = "/aurelio_ribeiro.pdf"
         link.download = 'aurelio_ribeiro.pdf'; // O nome que o arquivo terá ao ser baixado
         link.click();
 
