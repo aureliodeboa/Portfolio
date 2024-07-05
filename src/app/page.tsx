@@ -18,7 +18,8 @@ import { useEffect } from "react";
 const Page = () =>{
 
   return(
-    
+    window.scrollTo(0, 0), // Isso garante que a página comece do topo
+
     <ThemeProvider>
       <Container>
         <Navbar/>
