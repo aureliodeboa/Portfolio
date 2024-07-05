@@ -16,9 +16,10 @@ import { useEffect } from "react";
 
 
 const Page = () =>{
-  useEffect(() => { window.scrollTo(0, 0);}, []); //teste para ver se no mobile fica no incio da pagina
+
   return(
-    
+    window.scrollTo(0, 0), // Isso garante que a página comece do topo
+
     <ThemeProvider>
       <Container>
         <Navbar/>
