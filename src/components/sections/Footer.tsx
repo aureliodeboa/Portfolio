@@ -9,7 +9,7 @@ export const Footer = () => {
             <div className="text-center">
                 <p>
                 {t("footer.rights")} | 
-                    <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer" className="mx-1 dark:text-white text-black font-bold hover:underline">
+                    <a href="https://github.com/aureliodeboa" target="_blank" rel="noopener noreferrer" className="mx-1 dark:text-white text-black font-bold hover:underline">
                         Aurelio Ribeiro 
                     </a>
                     | Copyright  &copy; {currentYear} 
