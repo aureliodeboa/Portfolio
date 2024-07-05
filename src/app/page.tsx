@@ -8,13 +8,17 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { About_me } from "@/components/sections/About-me";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/sections/Footer";
+import { useEffect } from "react";
 
 
 
 
 
 const Page = () =>{
+  useEffect(() => { window.scrollTo(0, 0);}, []); //teste para ver se no mobile fica no incio da pagina
   return(
+    
     <ThemeProvider>
       <Container>
         <Navbar/>
@@ -22,6 +26,7 @@ const Page = () =>{
         <Projects/>
         <About_me/>
         <Contact/>
+        <Footer/>
       </Container>
     </ThemeProvider>
 
