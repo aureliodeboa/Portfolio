@@ -32,7 +32,11 @@
             "email":"Digite seu email",
             "message":"Digite sua mensagem..."
         }
+    },
+    "footer":{
+        "rights":"Todos os direitos reservados"
     }
+
 
 
 }

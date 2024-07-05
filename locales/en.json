@@ -36,6 +36,9 @@
             "message":"Enter your message..."
         }
             
+    },
+    "footer":{
+        "rights":"All rights reserved"
     }
    
 }
