@@ -16,7 +16,7 @@ import { useEffect } from "react";
 
 
 const Page = () =>{
-  useEffect(() => { window.scrollTo(0, 0);}, []); //teste para ver se no mobile fica no incio da pagina
+
   return(
     
     <ThemeProvider>
