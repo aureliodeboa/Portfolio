@@ -9,7 +9,6 @@ import { About_me } from "@/components/sections/About-me";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
-import { useEffect } from "react";
 
 
 
