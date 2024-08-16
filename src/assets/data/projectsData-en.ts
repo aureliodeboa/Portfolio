@@ -5,6 +5,7 @@ import imgSibi from "@/assets/images/sibi.png";
 import imgStarbuks from "@/assets/images/starbuks.png";
 import imgTodoReact from "@/assets/images/todoreact.png";
 import imgQuizReact from "@/assets/images/QuizReact.png";
+import imgI9site from "@/assets/images/sitei9.png"
 
 export const projectData_en: projectType[] = [
     {
@@ -61,5 +62,15 @@ export const projectData_en: projectType[] = [
         usedtechnologies: ["Flutter", "Dart", "Scrum", "Git"],
         urlProject: "https://www.youtube.com/watch?v=p7WKsB0vFxk&feature=youtu.be"
     },
+    {
+        id: 7,
+        imageProject: imgI9site,
+        title: "I9 Junior Website",
+        description: "I9 is a junior enterprise at the Federal University of the São Francisco Valley, linked to the Computing Department. It provides technological solutions for companies and entrepreneurs by developing websites, applications, and customized systems. I developed the front-end of this website.",
+        linkGithub: "https://github.com/inove-jr/i9-website",
+        usedtechnologies: ["TypeScript", "Tailwind", "React", "Next.js", "Git", "Kanban", "Scrum"],
+        urlProject: "https://inove-jr.vercel.app/"
+    },
+    
    
 ];

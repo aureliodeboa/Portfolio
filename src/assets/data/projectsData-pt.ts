@@ -5,6 +5,7 @@ import imgSibi from "@/assets/images/sibi.png";
 import imgStarbuks from "@/assets/images/starbuks.png"
 import imgTodoReact from "@/assets/images/todoreact.png"
 import imgQuizReact from "@/assets/images/QuizReact.png"
+import imgI9site from "@/assets/images/sitei9.png"
 
 export const projectData_pt: projectType[] = [
     {
@@ -68,6 +69,17 @@ export const projectData_pt: projectType[] = [
         linkGithub : "https://github.com/aureliodeboa/AplicativoSIBI?tab=readme-ov-file",
         usedtechnologies : ["Flutter","Dart","Scrum","Git"],
         urlProject: "https://www.youtube.com/watch?v=p7WKsB0vFxk&feature=youtu.be"
+
+    },
+
+    {
+        id:7,
+        imageProject: imgI9site,
+        title: "Site I9 Junior",
+        description: "A I9 é uma empresa júnior da Universidade Federal do Vale do São Francisco, vinculada ao Colegiado de Computação. Ela oferece soluções tecnológicas para empresas e empreendedores, desenvolvendo sites, aplicativos e sistemas personalizados. Eu desenvolvi o front-end deste site.",
+        linkGithub : "https://github.com/inove-jr/i9-website",
+        usedtechnologies : ["Typescript","Tailwind","React","Next.js","Git","Kanban","Scrum"],
+        urlProject: "https://inove-jr.vercel.app/"
 
     },
 
