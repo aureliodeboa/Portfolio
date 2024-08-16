@@ -17,9 +17,8 @@ import { Footer } from "@/components/sections/Footer";
 const Page = () =>{
 
   return(
-   
-
-    <ThemeProvider>
+    
+       <ThemeProvider>
       <Container>
         <Navbar/>
         <Profile/>
