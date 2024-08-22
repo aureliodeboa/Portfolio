@@ -10,12 +10,13 @@ import imgI9site from "@/assets/images/sitei9.png"
 export const projectData_en: projectType[] = [
     {
         id: 1,
-        imageProject: imgColeman,
-        title: "Tribute to Ronnie Coleman",
-        description: "This is a tribute page project for Ronnie Coleman, created to test my front-end skills. The page aims to honor and highlight the exceptional career of renowned bodybuilder Ronnie Coleman. The page is fully responsive, adapting to different screen sizes and devices.",
-        linkGithub: "https://github.com/aureliodeboa/Tribute-Ronnie-Coleman",
-        usedtechnologies: ["Html", "Css", "Git"],
-        urlProject: "https://aureliodeboa.github.io/Tribute-Ronnie-Coleman/"
+        imageProject: imgI9site,
+        title: "I9 Junior Website",
+        description: "I9 is a junior enterprise at the Federal University of the São Francisco Valley, linked to the Computing Department. It provides technological solutions for companies and entrepreneurs by developing websites, applications, and customized systems. I developed the front-end of this website.",
+        linkGithub: "https://github.com/inove-jr/i9-website",
+        usedtechnologies: ["TypeScript", "Tailwind", "React", "Next.js", "Git", "Kanban", "Scrum"],
+        urlProject: "https://inove-jr.vercel.app/"
+        
     },
     {
         id: 2,
@@ -64,12 +65,13 @@ export const projectData_en: projectType[] = [
     },
     {
         id: 7,
-        imageProject: imgI9site,
-        title: "I9 Junior Website",
-        description: "I9 is a junior enterprise at the Federal University of the São Francisco Valley, linked to the Computing Department. It provides technological solutions for companies and entrepreneurs by developing websites, applications, and customized systems. I developed the front-end of this website.",
-        linkGithub: "https://github.com/inove-jr/i9-website",
-        usedtechnologies: ["TypeScript", "Tailwind", "React", "Next.js", "Git", "Kanban", "Scrum"],
-        urlProject: "https://inove-jr.vercel.app/"
+        imageProject: imgColeman,
+        title: "Tribute to Ronnie Coleman",
+        description: "This is a tribute page project for Ronnie Coleman, created to test my front-end skills. The page aims to honor and highlight the exceptional career of renowned bodybuilder Ronnie Coleman. The page is fully responsive, adapting to different screen sizes and devices.",
+        linkGithub: "https://github.com/aureliodeboa/Tribute-Ronnie-Coleman",
+        usedtechnologies: ["Html", "Css", "Git"],
+        urlProject: "https://aureliodeboa.github.io/Tribute-Ronnie-Coleman/"
+        
     },
     
    
