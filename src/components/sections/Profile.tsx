@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import imageProfile from "@/assets/images/profile.jpg"
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 
 
@@ -41,10 +42,24 @@ export const Profile = () =>{
       const handleEmail = () => {
         window.location.href = 'mailto:aurelio74123@gmail.com';
       };
-    
+
+     
     return(
         <section id='home' className="relative flex flex-col justify-center min-h-dvh  pt-20  xl:flex-row  gap-6  lg:px-28 lg:flex-row w-full px-5 content-center items-center">
-            <span className="flex justify-center  xl:ml-2  lg:ml-8"><img className="shadow-sm shadow-black  dark:shadow-yellow-600 rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px]   lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></span>
+            <motion.span
+             whileHover={{ scale: 1.15}}
+             whileTap={{
+                 scale: 1,
+                 rotate: -5,
+                 borderRadius: "100%"
+               }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 30
+              }}
+
+             className="flex justify-center  xl:ml-2  lg:ml-8"><img className="shadow-sm shadow-black  dark:shadow-yellow-600 rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px]   lg:mt-0 md:h-[300px] md:w-[300px] " src={imageProfile.src} alt='imagem aurelio' /></motion.span>
 
             <div className="relative flex-1 flex-col  justify-center  text-center xl:text-start lg:text-start">
                 <span className="w-full text-wrap flex flex-col justify-center">
