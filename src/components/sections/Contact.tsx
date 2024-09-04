@@ -3,6 +3,8 @@ import { ButtonMidia } from "../ButtonMidia"
 import { LuMail } from "react-icons/lu"
 import { SendEmail } from "../SendEmail"
 import { useTranslation } from "react-i18next";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 
 export const Contact = () =>{
@@ -23,8 +25,19 @@ export const Contact = () =>{
                             <ButtonMidia clickAction={handleLinkedIn}><SiLinkedin size={"30px"} /></ButtonMidia>
                             <ButtonMidia clickAction={handleEmail}><LuMail size={"30px"} /></ButtonMidia>
                         </div>
+                        <div className="flex justify-center items-center  w-full h-full">
+                        <DotLottieReact
+                            className=" w-full h-full"
+                            src="https://lottie.host/61465e93-dab0-4bd1-9799-ad373164ffce/FEeG9RBHHh.json"
+                            loop
+                            autoplay
+                            
+                            /> 
+                        </div>
                         
-                    </div>
+                       
+                           
+                     </div>
                     <SendEmail/>
                 </div>
         </section>
