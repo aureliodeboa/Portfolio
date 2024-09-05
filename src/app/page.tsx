@@ -22,7 +22,7 @@ const Page = () =>{
       <Container>
         <Navbar/>
         <Profile/>
-        <Projects/>
+        {/*<Projects/>*/}
         <About_me/>
         <Contact/>
         <Footer/>
