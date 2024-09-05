@@ -57,7 +57,7 @@ export const SendEmail = () =>{
           />
   
           <textarea 
-            className="textarea input h-[100%] p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px] resize-none  "
+            className="textarea input h-[400px] p-4 focus:outline-none  dark:focus:border-white  focus:border-yellow-500  rounded-md bg-white dark:bg-[#101012] border-[#353434] border-[2px] resize-none  "
             placeholder={t("contact.form.message")}
             onChange={(e) => setMessage(e.target.value)}
             value={message}

@@ -24,7 +24,7 @@ export const Projects = () => {
     if (typeof window !== "undefined") {
       if (window.innerWidth > 1720) {
       
-        return 3;
+        return 4;
       } else if (window.innerWidth > 1000) {
         return 3;
       } else if (window.innerWidth > 600) {
