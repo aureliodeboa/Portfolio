@@ -56,7 +56,7 @@ export const Profile = () =>{
            animate={{ opacity: 1, scale: 1,rotate:360 }}
             transition={{
               duration: 0.8,
-              delay: 0.5,
+              delay: 0.01,
               ease: [0, 0.71, 0.2, 1.01]
             }}
            whileHover={{ scale: 1.15 }}
