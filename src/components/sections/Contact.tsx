@@ -16,7 +16,7 @@ export const Contact = () =>{
         window.location.href = 'mailto:aurelio74123@gmail.com';
       };
     return(
-        <section  id="contact" className="h-auto pt-14  w-full flex items-center justify-center">
+        <section  id="contact" className="h-auto pt-14  w-full flex items-center justify-center bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white">
                 <div className="h-auto w-[98%] flex flex-col md:flex-row border-black dark:border-white  rounded-xl border-[1px]  py-6 px-10 ">
                     <div className="flex flex-col h-auto  md:w-1/2  text-justify py-4  gap-4">
                         <h1 className=" text-2xl md:text-3xl font-bold ">{t("contact.title")}</h1>

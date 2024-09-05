@@ -61,7 +61,7 @@ export const Projects = () => {
  
 
   return (
-    <section id="projects" className="h-auto py-8 flex flex-col items-center  w-full">
+    <section id="projects" className="h-auto py-8 flex flex-col items-center bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white  w-full">
       <div className="mt-7 h-auto w-full ">
         <h1 className="text-2xl md:text-4xl px-6 md:px-10 font-bold text-left">{t("projects.title")}</h1>
         <h6 className="pt-5  px-5 md:px-10 text-base text-left">{t("projects.description")}</h6>

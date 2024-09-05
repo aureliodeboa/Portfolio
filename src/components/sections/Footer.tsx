@@ -4,7 +4,7 @@ export const Footer = () => {
     const currentYear = new Date().getFullYear();
     const { t } = useTranslation();
     return (
-        <div className="py-4 mt-8">
+        <div className="py-4  bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white">
             <hr className="border-gray-700 mb-4" />
             <div className="text-center">
                 <p>

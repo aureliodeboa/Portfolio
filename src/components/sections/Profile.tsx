@@ -40,7 +40,9 @@ export const Profile = () =>{
     };
 
   return(
-      <section id='home' className="relative flex flex-col justify-center min-h-dvh pt-20 xl:flex-row gap-6 lg:px-28 lg:flex-row w-full px-5 content-center items-center">
+      <section id='home' className="
+      bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white
+      relative flex flex-col justify-center min-h-dvh pt-20 xl:flex-row gap-6 lg:px-28 lg:flex-row w-full px-5 content-center items-center">
           
           <DotLottieReact
                             className="h-full w-full absolute z-10 "

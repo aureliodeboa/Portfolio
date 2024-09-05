@@ -31,7 +31,7 @@ export const Navbar =()=> {
               ease: [0, 0.71, 0.2, 1.01]
             }}
         
-        className=" fixed top-0  w-full flex flex-col-reverse md:flex-row  md:justify-around   border-b-[0.5px] border-gray-200 dark:border-gray-800 bg-white dark:bg-[#09090B] z-20">
+        className=" fixed top-0  w-full flex flex-col-reverse md:flex-row  md:justify-around bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white   border-b-[0.5px] border-gray-200 dark:border-gray-800 z-20">
             <div className="hidden min-w-48  lg:flex justify-center content-center  items-center text-sm md:text-xl lg:text-xl font-bold "> {"<"}<span className="text-yellow-300">/</span>{"> "}Aurelio Ribeiro</div> 
             
             
