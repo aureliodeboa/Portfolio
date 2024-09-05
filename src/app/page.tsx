@@ -19,14 +19,14 @@ const Page = () =>{
   return(
     
        <ThemeProvider>
-      <Container>
+      
         <Navbar/>
         <Profile/>
         <Projects/>
-        {/*<About_me/>*/}
+        <About_me/>
         <Contact/>
         <Footer/>
-      </Container>
+      
     </ThemeProvider>
 
   )
