@@ -1,4 +1,5 @@
 import { useTheme } from "@/contexts/ThemeContext";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { ReactNode, useEffect, useLayoutEffect } from "react";
 
 type Props = {
@@ -12,9 +13,10 @@ export const Container = ({ children }: Props) => {
       }, []);
    
     return (
-        <div className="w-full h-dvh overflow-y-scroll flex flex-col justify-around bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white relative">
+        <div className=" w-full h-dvh overflow-y-scroll flex flex-col justify-around bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white relative">
         
             {children}
+            
         </div>
     );
 };

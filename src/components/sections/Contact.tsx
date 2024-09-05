@@ -27,7 +27,7 @@ export const Contact = () =>{
                         </div>
                         <div className="flex justify-center items-center  w-full h-full">
                         <DotLottieReact
-                            className=" w-full h-full"
+                            className="w-full h-full "
                             src="https://lottie.host/61465e93-dab0-4bd1-9799-ad373164ffce/FEeG9RBHHh.json"
                             loop
                             autoplay
