@@ -126,11 +126,9 @@ Para mais informações, entre em contato através das redes sociais ou envie um
 ---
 
 **Autor**
-
-[Aurélio Ribeiro]
+Aurélio Ribeiro
 
 Desenvolvedor Full-Stack | Entusiasta de Tecnologia
 
 ---
 
-Espero que este README forneça todas as informações necessárias para entender, configurar e contribuir para o projeto do meu portfólio pessoal. Se tiver alguma dúvida, não hesite em entrar em contato!
