@@ -92,7 +92,7 @@ export const Profile = () =>{
           className="relative flex-1 flex-col justify-center text-center xl:text-start lg:text-start z-20"> {/* z-20 here as well */}
               <span className="w-full text-wrap flex flex-col justify-center">
                   <motion.h1 
-                    className="font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl bg-gradient-to-r from-blue-600 to-purple-600 dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent"
+                    className="font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent"
                     initial={{opacity: 0, y: 20}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.8, delay: 1.2}}
@@ -178,7 +178,7 @@ export const Profile = () =>{
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                <BsChevronDoubleDown size={"30px"} className="text-blue-600 dark:text-yellow-400" />
+                <BsChevronDoubleDown size={"30px"} className=" from-yellow-400 to-yellow-400 dark:from-yellow-400 dark:to-orange-500 dark:text-yellow-400" />
               </motion.div>
           </motion.span>   
       </section>

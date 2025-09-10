@@ -6,6 +6,8 @@ interface Star {
   size: number;
   opacity: number;
   speed: number;
+  twinkleSpeed: number;
+  baseOpacity: number;
 }
 
 interface ShootingStar {
@@ -46,12 +48,15 @@ export const StarrySky = () => {
       const numStars = 200;
       
       for (let i = 0; i < numStars; i++) {
+        const baseOpacity = Math.random() * 0.8 + 0.2;
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 2 + 0.5,
-          opacity: Math.random() * 0.8 + 0.2,
-          speed: Math.random() * 0.02 + 0.01
+          opacity: baseOpacity,
+          speed: Math.random() * 0.02 + 0.01,
+          twinkleSpeed: Math.random() * 0.005 + 0.001, // Velocidade do piscar mais devagar
+          baseOpacity: baseOpacity
         });
       }
       
@@ -85,22 +90,37 @@ export const StarrySky = () => {
       }
     };
 
+    // Função para detectar o tema
+    const getThemeColors = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      return {
+        starColor: isDark ? '#ffffff' : '#000000',
+        shadowColor: isDark ? '#ffffff' : '#000000'
+      };
+    };
+
     // Função de animação
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const colors = getThemeColors();
 
       // Desenhar estrelas fixas
       starsRef.current.forEach(star => {
+        // Atualizar opacidade para criar efeito de piscar mais suave
+        star.opacity = star.baseOpacity + Math.sin(Date.now() * star.twinkleSpeed) * 0.15;
+        star.opacity = Math.max(0.3, Math.min(1, star.opacity)); // Limitar entre 0.3 e 1
+        
         ctx.save();
         ctx.globalAlpha = star.opacity;
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = colors.starColor;
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
         ctx.fill();
         
-        // Efeito de brilho
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#ffffff';
+        // Efeito de brilho que varia com o piscar
+        ctx.shadowBlur = 10 + (star.opacity * 5);
+        ctx.shadowColor = colors.shadowColor;
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size * 0.5, 0, Math.PI * 2);
         ctx.fill();
@@ -116,10 +136,10 @@ export const StarrySky = () => {
         if (star.life > 0) {
           ctx.save();
           ctx.globalAlpha = star.life;
-          ctx.strokeStyle = '#ffffff';
+          ctx.strokeStyle = colors.starColor;
           ctx.lineWidth = 2;
           ctx.shadowBlur = 15;
-          ctx.shadowColor = '#ffffff';
+          ctx.shadowColor = colors.shadowColor;
           
           ctx.beginPath();
           ctx.moveTo(star.x, star.y);
@@ -148,7 +168,7 @@ export const StarrySky = () => {
         if (particle.life > 0) {
           ctx.save();
           ctx.globalAlpha = particle.life;
-          ctx.fillStyle = '#ffffff';
+          ctx.fillStyle = colors.starColor;
           ctx.beginPath();
           ctx.arc(particle.x, particle.y, 1, 0, Math.PI * 2);
           ctx.fill();
