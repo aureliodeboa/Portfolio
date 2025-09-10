@@ -48,7 +48,7 @@ export const Profile = () =>{
           <StarrySky />
            
           <motion.span
-           initial={{scale:0.3, opacity:0, y: 0, x: 0, rotate: -180}}
+           initial={{scale:0.3, opacity:0, y: 100, x: 0, rotate: -180}}
            animate={{ 
              opacity: 1, 
              scale: 1, 
