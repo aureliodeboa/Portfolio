@@ -8,8 +8,8 @@
     },
     "profileSection":{
         "title":"Aurélio Ribeiro",
-        "subtitle":"Desenvolvedor Front-End e Mobile",
-        "description":"Graduando em Engenharia da computação e entusiasta na análise de dados.",
+        "subtitle":"Engenheiro de Software",
+        "description":"Full Stack Developer entusiasta em inteligência artificial",
         "curriculum":"Curriculo"
     },
     "projects": {
@@ -19,7 +19,7 @@
     },
     "about-me":{
         "title":"Sobre mim",
-        "description":"Desde criança, eu desmontava tudo, tentando entender como o mundo funcionava por dentro. Daí surgiu minha paixão por compreender como os circuitos lógicos dos meus brinquedos funcionavam, o que me impulsionou a me graduar em Engenharia da Computação na Universidade Federal do Vale do São Francisco. Na universidade, enfrentei diversos desafios nas áreas de hardware e software, alguns dos quais você pode conferir no meu GitHub. No momento, me dedico ao desenvolvimento de software, mais precisamente ao front-end do desenvolvimento web. Já me aventurei em projetos de mobile (Flutter), análise de dados e inteligência artificial. Atualmente, estou envolvido com a empresa júnior I9 e continuo aprimorando meus conhecimentos em React e Power BI."
+        "description":"Desde criança, eu desmontava tudo, tentando entender como o mundo funcionava por dentro. Daí surgiu minha paixão por compreender como os circuitos lógicos dos meus brinquedos funcionavam, o que me impulsionou a me graduar em Engenharia da Computação na Universidade Federal do Vale do São Francisco. Na universidade, enfrentei diversos desafios nas áreas de hardware e software, alguns dos quais você pode conferir no meu GitHub. Atualmente, me dedico ao desenvolvimento full stack, trabalhando com PHP, Laravel, React, Next.js e outras tecnologias modernas. Tenho experiência em desenvolvimento web completo, desde o backend com Laravel e Django até o frontend com React e TypeScript. Já me aventurei em projetos de mobile (Flutter), análise de dados e inteligência artificial. Atualmente, trabalho como desenvolvedor full stack na UNIVASF e continuo aprimorando meus conhecimentos em desenvolvimento de software."
     },
     "current-language":{
         "locale":"pt"
