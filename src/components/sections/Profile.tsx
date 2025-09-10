@@ -67,9 +67,9 @@ export const Profile = () =>{
                rotateY: -5
              }}
             
-           className="flex justify-center xl:ml-2 lg:ml-8 z-20 relative"> {/* Add z-20 to ensure it's above the background */}
+           className="flex justify-center xl:ml-2 lg:ml-8 z-20 relative rounded-[20%] lg:rounded-[15px]"> {/* Add z-20 to ensure it's above the background */}
               <motion.img 
-                className="shadow-sm shadow-black dark:shadow-yellow-600 rounded-[80%] lg:rounded-[50px] h-[250px] w-[250px] lg:mt-0 md:h-[300px] md:w-[300px]" 
+                className="shadow-sm shadow-black dark:shadow-yellow-600 rounded-[20%] lg:rounded-[15px] h-[250px] w-[250px] lg:mt-0 md:h-[300px] md:w-[300px]" 
                 src={imageProfile.src} 
                 alt='imagem aurelio'
                 initial={{filter: "blur(10px)"}}
