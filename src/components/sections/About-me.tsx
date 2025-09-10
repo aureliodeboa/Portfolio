@@ -26,7 +26,32 @@ export const About_me = () => {
         : (showAllExperiences ? "See less" : "See more");
     
     return (
-        <section id="about-me" className="flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-12 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid">
+        <section id="about-me" className="relative flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-12 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid overflow-hidden">
+            {/* Gradiente de fundo com partículas */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-100/20 dark:from-yellow-900/10 dark:via-transparent dark:to-orange-900/10"></div>
+            
+            {/* Partículas flutuantes */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {[...Array(20)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="absolute w-2 h-2 bg-yellow-400/60 dark:bg-yellow-400/20 rounded-full"
+                        style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                        }}
+                        animate={{
+                            y: [0, -20, 0],
+                            opacity: [0.6, 1, 0.6],
+                        }}
+                        transition={{
+                            duration: 3 + Math.random() * 2,
+                            repeat: Infinity,
+                            delay: Math.random() * 2,
+                        }}
+                    />
+                ))}
+            </div>
            
             {/* Seção de texto sobre mim */}
             <motion.div 
@@ -61,7 +86,7 @@ export const About_me = () => {
                 <hr className="absolute w-[2px] left-1/2 transform -translate-x-1/2 h-full border-0 border-l-2 border-dotted border-black dark:border-white" />
 
                 {/* Container das experiências */}
-                <div className="w-full max-w-6xl px-4 sm:px-5 lg:px-10 xl:px-32">
+                <div className="w-full max-w-7xl px-4 sm:px-5 lg:px-10 xl:px-32 2xl:px-40">
                     <AnimatePresence mode="wait">
                         <div className="flex flex-col gap-8">
                             {displayedExperiences.map((experience, index) => (
@@ -88,12 +113,12 @@ export const About_me = () => {
                             ))}
                         </div>
                     </AnimatePresence>
-                </div>
-
+             </div>
+            
                 {/* Botão Ver mais/Ver menos */}
                 {experienceData.length > initialExperiencesCount && (
                     <motion.div
-                        className="mt-6"
+                        className="mt-6 relative z-10"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
@@ -101,7 +126,7 @@ export const About_me = () => {
                     >
                         <motion.button
                             onClick={() => setShowAllExperiences(!showAllExperiences)}
-                            className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                            className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 relative z-10"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
