@@ -29,14 +29,11 @@ export const About_me = () =>{
                     <hr className="absolute w-[2px] xl:left-[50%] h-full border-0 border-l-2 border-dotted border-black dark:border-white" />
 
                     {experienceData.map((experience)=>(
-                        <div key={experience.id} className={`w-full px-4 sm:px-5 lg:px-10  xl:px-32 flex justify-center    ${experience.id%2?'md:justify-start':'md:justify-end'}`}>
-                             
-                            
+                        <div key={experience.id} className="w-full px-4 sm:px-5 lg:px-10 xl:px-32 flex justify-center">
                             <ExperienceCard  id={experience.id} logoCompany={experience.logoCompany} titleCompany={experience.titleCompany} titleJob={experience.titleJob}
                             dateIn={experience.dateIn} dateOut={experience.dateOut} descriptionJob={experience.descriptionJob} usedtechnologies={experience.usedtechnologies}
                             key={experience.id} subtitleCompany={experience.subtitleCompany}
                         />
-                            
                         </div>
                     ))}
                   

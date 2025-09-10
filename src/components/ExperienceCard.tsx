@@ -82,14 +82,6 @@ export const ExperienceCard= (experienceCardContent:ExperienceCardType)=>{
                     }
                   
                  </div>
-                   {/* triangulo que aparece do lado direito somente quando xl caso contrario fica oculto o segund span é o triangulo do lado esquerdo*/}
-                    <span className={`${experienceCardContent.id%2?'md:flex':''} hidden  absolute -right-7 top-3 rounded-md  border-solid dark:border-l-[#181616b7] border-l-[30px] border-y-transparent border-y-[30px] border-r-0`}></span>
-                    <span className={`${experienceCardContent.id%2?'md:hidden':'md:flex'} hidden  absolute -left-7 top-3 border-solid dark:border-r-[#181616b7] border-r-[30px] border-y-transparent border-y-[30px] border-l-0`}></span>
-
-                    {/*Botao da time-line dos cards do lado esquerdo*/}
-                    <span className={`${experienceCardContent.id%2?'md:flex ':''} hidden absolute top-9 -right-[26.8%] rounded-full w-4 h-4 bg-black dark:bg-white`}></span>
-                    {/*Botao da time-line dos cards do lado direito                    */}
-                    <span className={`${experienceCardContent.id%2?'':'md:flex'} hidden absolute top-9 right-[123.3%] rounded-full w-4 h-4 bg-black dark:bg-white`}></span>
                    
         </div>
     )
