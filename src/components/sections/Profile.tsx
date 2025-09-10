@@ -48,14 +48,20 @@ export const Profile = () =>{
           <StarrySky />
            
           <motion.span
-           initial={{scale:0, opacity:0, y: 100, rotateY: -180}}
-           animate={{ opacity: 1, scale: 1, y: 0, rotateY: 0 }}
+           initial={{scale:0.3, opacity:0, y: 0, x: 0, rotate: -180}}
+           animate={{ 
+             opacity: 1, 
+             scale: 1, 
+             y: 0, 
+             x: 0,
+             rotate: 0
+           }}
             transition={{
-              duration: 1.2,
+              duration: 1.5,
               delay: 0.3,
               ease: [0.25, 0.46, 0.45, 0.94],
               type: "spring",
-              stiffness: 100
+              stiffness: 80
             }}
            whileHover={{ 
              scale: 1.1, 
@@ -72,8 +78,6 @@ export const Profile = () =>{
                 className="shadow-sm shadow-black dark:shadow-yellow-600 rounded-[20%] lg:rounded-[15px] h-[250px] w-[250px] lg:mt-0 md:h-[300px] md:w-[300px]" 
                 src={imageProfile.src} 
                 alt='imagem aurelio'
-                initial={{filter: "blur(10px)"}}
-                animate={{filter: "blur(0px)"}}
                 transition={{duration: 0.8, delay: 1.5}}
               />
           </motion.span>
