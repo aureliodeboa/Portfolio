@@ -27,9 +27,6 @@ export const About_me = () => {
     
     return (
         <section id="about-me" className="relative flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-12 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid overflow-hidden">
-            {/* Gradiente de fundo com partículas */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-100/20 dark:from-yellow-900/10 dark:via-transparent dark:to-orange-900/10"></div>
-            
             {/* Partículas flutuantes */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {[...Array(20)].map((_, i) => (
@@ -62,7 +59,7 @@ export const About_me = () => {
                 viewport={{ once: true }}
             >
                 <motion.h1 
-                    className="py-5 text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent"
+                    className="py-5 text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}

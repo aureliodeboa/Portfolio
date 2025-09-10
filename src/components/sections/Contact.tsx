@@ -17,9 +17,9 @@ export const Contact = () =>{
       };
     return(
         <section  id="contact" className="h-auto pt-14  w-full flex items-center justify-center bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white">
-                <div className="h-auto w-[98%] flex flex-col md:flex-row border-black dark:border-white  rounded-xl border-[1px]  py-6 px-10 ">
+                <div className="h-auto w-[98%] flex flex-col md:flex-row border-black dark:border-white  rounded-xl border-[1px]  py-6 px-4 sm:px-10 md:px-20 ">
                     <div className="flex flex-col h-auto  md:w-1/2  text-justify py-4  gap-4">
-                        <h1 className=" text-2xl md:text-3xl font-bold ">{t("contact.title")}</h1>
+                        <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">{t("contact.title")}</h1>
                         <p className=" text-sm md:text-base w-full text-justify md:w-2/3 ">{t("contact.description")}</p>
                         <div className="flex flex-row ">
                             <ButtonMidia clickAction={handleLinkedIn}><SiLinkedin size={"30px"} /></ButtonMidia>
