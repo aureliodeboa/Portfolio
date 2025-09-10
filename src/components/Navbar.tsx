@@ -31,11 +31,11 @@ export const Navbar =()=> {
               ease: [0, 0.71, 0.2, 1.01]
             }}
         
-        className=" fixed top-0  w-full flex flex-col-reverse md:flex-row  md:justify-around bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white   border-b-[0.5px] border-gray-200 dark:border-gray-800 z-20">
+        className=" fixed top-0  w-full flex flex-col-reverse md:flex-row  md:justify-around bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white   border-b-[0.5px] border-gray-200 dark:border-gray-800 z-50">
             <div className="hidden min-w-48  lg:flex justify-center content-center  items-center text-sm md:text-xl lg:text-xl font-bold "> {"<"}<span className="text-yellow-300">/</span>{"> "}Aurelio Ribeiro</div> 
             
             
-            <ul className={`${openMenu?'':'hidden'}  md:flex md:items-center mb-1 mt-6 md:mt-2 md:static  w-full md:w-auto md:pl-0 pl-9` }> 
+            <ul className={`${openMenu?'':'hidden'}  md:flex md:items-center mb-1 mt-6 md:mt-2 md:static  w-full md:w-auto md:pl-0 pl-9 relative z-50 bg-[#FFFFFF] dark:bg-[#09090B] md:bg-transparent dark:md:bg-transparent` }> 
                  {
                      Links.map((link)=>(
                             <li key={link.name} className="items-center justify-center flex"> 
