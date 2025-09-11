@@ -18,7 +18,7 @@ export const Contact = () =>{
       };
     return(
         <section  id="contact" className="h-auto pt-14  w-full flex items-center justify-center bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white">
-                <div className="h-auto w-[98%] flex flex-col md:flex-row border-black dark:border-white  rounded-xl border-[1px]  py-6 px-4 sm:px-10 md:px-20 ">
+                <div className="h-auto w-[98%] flex flex-col md:flex-row border-black dark:border-white  rounded-xl border-[1px]  py-6 px-4 sm:px-10 md:px-10 ">
                     <div className="flex flex-col h-auto  md:w-1/2  text-justify py-4  gap-6">
                         <div className="flex items-center gap-3">
                             <HiOutlineSparkles className="text-yellow-400 text-2xl" />
@@ -35,18 +35,18 @@ export const Contact = () =>{
                             <div className="flex items-center gap-4 mt-4">
                                 <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                                     <FaCode className="text-yellow-400" />
-                                    <span>Desenvolvimento</span>
+                                    <span>{t("contact.buttons.development")}</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                                     <FaRocket className="text-orange-400" />
-                                    <span>Inovação</span>
+                                    <span>{t("contact.buttons.innovation")}</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div className="mt-6 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                        <div className="mt-6 mr-32 md:mr-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
                             <p className="text-sm text-gray-700 dark:text-gray-300 italic">
-                                "Vamos criar algo incrível juntos! 💫"
+                                "{t("contact.form.motivational")}"
                             </p>
                         </div>
                      </div>

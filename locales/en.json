@@ -30,10 +30,19 @@
     "contact":{
         "title":"Contact",
         "description":"Let's go to work? You can contact me using the form or social media below.",
+        "buttons":{
+            "development":"Development",
+            "innovation":"Innovation"
+        },
         "form":{
+            "title":"Send a message",
+            "description":"Fill out the form below and I'll get back to you soon!",
             "name":"Enter your name",
             "email":"Enter your email",
-            "message":"Enter your message..."
+            "message":"Enter your message...",
+            "button":"Send Message",
+            "validation":"Fill out the form",
+            "motivational":"Let's create something amazing together! 💫"
         }
             
     },

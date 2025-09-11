@@ -6,6 +6,7 @@ import { FaUser, FaEnvelope } from "react-icons/fa";
 import { LuMessageSquare } from "react-icons/lu";
 
 export const SendEmail = () =>{
+    const { t } = useTranslation();
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -14,7 +15,7 @@ export const SendEmail = () =>{
         e.preventDefault();
 
         if(name =='' || email =='' || message ==''){
-            alert("Preencha o form")
+            alert(t("contact.form.validation"))
             return;
         }
 
@@ -37,13 +38,12 @@ export const SendEmail = () =>{
         })
 
     }
-    const { t } = useTranslation();
   
     return (
       <div className="flex flex-col h-full w-full md:w-1/2 justify-between text-justify py-4 dark:text-white text-black">
         <div className="mb-4">
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Envie uma mensagem</h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400">Preencha o formulário abaixo e entrarei em contato em breve!</p>
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{t("contact.form.title")}</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.form.description")}</p>
         </div>
          
         <form className="form flex flex-col h-full gap-6 content-center" onSubmit={handleSendEmail}>
@@ -84,7 +84,7 @@ export const SendEmail = () =>{
             type="submit"
           >
             <HiOutlinePaperAirplane className="text-lg group-hover:translate-x-1 transition-transform duration-300" />
-            Enviar Mensagem
+            {t("contact.form.button")}
           </button>
         </form>
   
