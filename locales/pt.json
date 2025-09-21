@@ -25,12 +25,18 @@
         "locale":"pt"
     },
     "contact":{
+        
         "title":"Contato",
         "description":"Vamos ao trabalho? Você pode entrar em contato comigo pelo formulário ou pelas redes sociais abaixo.",
         "form":{
+            "title":"Envie uma mensagem",
+            "description":"Preencha o formulário abaixo e entrarei em contato com você em breve!",
             "name":"Digite seu nome",
             "email":"Digite seu email",
-            "message":"Digite sua mensagem..."
+            "message":"Digite sua mensagem...",
+            "button":"Enviar Mensagem",
+            "validation":"Preencha o formulário",
+            "motivational":"Vamos criar algo incrível juntos! 💫"
         }
     },
     "footer":{
