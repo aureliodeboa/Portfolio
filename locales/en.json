@@ -15,13 +15,13 @@
     },
     "projects": {
         "title":"Projects",
-        "description":"Here are some of my personal projects available on GitHub. By clicking on the image, you will be redirected to the project website, and by clicking on the title, you will go to the repository."
+        "description":"These are some of my projects that were part of my learning journey: some more recent, others older, but all built with dedication and a strong desire to learn."
         
     },
 
     "about-me":{
         "title":"About me",
-        "description":"Since I was a child, I used to take everything apart, trying to understand how the world works from the inside. That's where my passion for understanding how the logical circuits of my toys functioned came from, which led me to graduate in Computer Engineering at the Federal University of the São Francisco Valley. At university, I faced various challenges in the fields of hardware and software, some of which you can check out on my GitHub. Currently, I am dedicated to full stack development, working with PHP, Laravel, React, Next.js and other modern technologies. I have experience in complete web development, from backend with Laravel and Django to frontend with React and TypeScript. I have also ventured into mobile projects (Flutter), data analysis, and artificial intelligence. Currently, I work as a full stack developer at UNIVASF and continue to improve my knowledge in software development."
+        "description":"I am forever passionate about technology and innovation, born in the countryside from Jussara-Bahia, driven by curiosity and a constant desire to learn. My passion lies in solving real-world problems through technology—always learning, evolving, and seeking to positively impact people's lives. Even when I don't have all the answers, I persist, study, and find ways to make a difference."
     },
 
     "current-language":{
@@ -42,6 +42,8 @@
             "message":"Enter your message...",
             "button":"Send Message",
             "validation":"Fill out the form",
+            "success":"Message sent successfully!",
+            "error":"We couldn't send your message. Please try again.",
             "motivational":"Let's create something amazing together! 💫"
         }
             

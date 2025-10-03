@@ -14,12 +14,12 @@
     },
     "projects": {
         "title":"Projetos",
-        "description":"Esses são alguns dos meus projetos pessoais que estão disponíveis no GitHub, ao clicar na imagem você será redirecionado para o site do projeto e ao clicar no titulo você irá para o repositorio."
+        "description":"Estes são alguns dos meus projetos que fizeram parte do meu aprendizado: alguns mais atuais, outros mais antigos, mas todos feitos com muito empenho e vontade de aprender."
         
     },
     "about-me":{
         "title":"Sobre mim",
-        "description":"Desde criança, eu desmontava tudo, tentando entender como o mundo funcionava por dentro. Daí surgiu minha paixão por compreender como os circuitos lógicos dos meus brinquedos funcionavam, o que me impulsionou a me graduar em Engenharia da Computação na Universidade Federal do Vale do São Francisco. Na universidade, enfrentei diversos desafios nas áreas de hardware e software, alguns dos quais você pode conferir no meu GitHub. Atualmente, me dedico ao desenvolvimento full stack, trabalhando com PHP, Laravel, React, Next.js e outras tecnologias modernas. Tenho experiência em desenvolvimento web completo, desde o backend com Laravel e Django até o frontend com React e TypeScript. Já me aventurei em projetos de mobile (Flutter), análise de dados e inteligência artificial. Atualmente, trabalho como desenvolvedor full stack na UNIVASF e continuo aprimorando meus conhecimentos em desenvolvimento de software."
+        "description":"Sou um eterno apaixonado por tecnologia e inovação, vindo do interior (diretamente de Jussara-Bahia), movido pela curiosidade e pela vontade de aprender. Minha paixão está em resolver problemas do mundo real por meio da tecnologia, sempre aprendendo, evoluindo e buscando impactar positivamente a vida das pessoas. Mesmo quando não tenho todas as respostas, persisto, estudo e encontro caminhos para fazer a diferença."
     },
     "current-language":{
         "locale":"pt"
@@ -36,6 +36,8 @@
             "message":"Digite sua mensagem...",
             "button":"Enviar Mensagem",
             "validation":"Preencha o formulário",
+            "success":"Mensagem enviada com sucesso!",
+            "error":"Não foi possível enviar sua mensagem. Tente novamente.",
             "motivational":"Vamos criar algo incrível juntos! 💫"
         }
     },

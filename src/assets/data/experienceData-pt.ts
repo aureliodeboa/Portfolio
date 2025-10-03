@@ -16,7 +16,7 @@ export const experienceData_pt: ExperienceCardType[]= [
 
     titleJob: "Desenvolvedor Full Stack (PHP/Laravel)",
     descriptionJob: ["Desenvolvimento e manutenção da plataforma de gestão de estágios da universidade","Implementação de novas funcionalidades em PHP com Laravel","Correção de bugs e otimização de queries em PostgreSQL","Utilização de Docker para padronização de ambientes e Git para versionamento"],
-    usedtechnologies: ["PHP","Laravel","PostgreSQL","Docker","Git","Cursor","Claude","MCPs","Google CLI","Gemini","Task Master"],
+    usedtechnologies: ["PHP","Laravel","PostgreSQL","Docker","Git","Cursor","Claude Code","MCPs","Gemini-cli","Gemini","Task Master","Codex-cli"],
     dateIn: new Date(2025,2),
     dateOut:  new Date(Date.now()),
 },
@@ -40,8 +40,8 @@ export const experienceData_pt: ExperienceCardType[]= [
 
     titleJob: "Residente – Desenvolvedor Full Stack",
     descriptionJob: ["Desenvolvimento de jogos logísticos interativos para o IFBA","Atuação como Scrum Master, organizando sprints e prazos","Desenvolvimento full stack com React, TypeScript, Django e PostgreSQL"],
-    usedtechnologies: ["React","TypeScript","Django","PostgreSQL","Scrum","Git"],
-    dateIn: new Date(2024,0),
+    usedtechnologies: ["React","TypeScript","Django","PostgreSQL","Scrum","Git","Figma"],
+    dateIn: new Date(2024,1),
     dateOut:  new Date(Date.now()),
 },
 {

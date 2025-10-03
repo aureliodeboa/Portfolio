@@ -20,7 +20,7 @@ export const experienceData_en: ExperienceCardType[] = [
       "Bug fixes and PostgreSQL query optimization",
       "Use of Docker for environment standardization and Git for versioning"
     ],
-    usedtechnologies: ["PHP", "Laravel", "PostgreSQL", "Docker", "Git", "Cursor", "Claude", "MCPs", "Google CLI", "Gemini", "Task Master"],
+    usedtechnologies: ["PHP", "Laravel", "PostgreSQL", "Docker", "Git", "Cursor", "Claude Code", "MCPs", "Gemini-cli", "Gemini", "Task Master","Codex-cli"],
     dateIn: new Date(2025, 2),
     dateOut: new Date(Date.now()),
   },
@@ -51,8 +51,8 @@ export const experienceData_en: ExperienceCardType[] = [
       "Acting as Scrum Master, organizing sprints and deadlines",
       "Full stack development with React, TypeScript, Django and PostgreSQL"
     ],
-    usedtechnologies: ["React", "TypeScript", "Django", "PostgreSQL", "Scrum", "Git"],
-    dateIn: new Date(2024, 0),
+    usedtechnologies: ["React", "TypeScript", "Django", "PostgreSQL", "Scrum", "Git", "Figma"],
+    dateIn: new Date(2024, 1),
     dateOut: new Date(Date.now()),
   },
   {

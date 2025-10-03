@@ -4,6 +4,7 @@ import { experienceData_pt } from "@/assets/data/experienceData-pt";
 import { experienceData_en } from "@/assets/data/experienceData-en";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMemo } from "react";
 import ExpandableText from '@/components/ExpandableText';
 
 export const About_me = () => {
@@ -28,27 +29,7 @@ export const About_me = () => {
     return (
         <section id="about-me" className="relative flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-12 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid overflow-hidden">
             {/* Partículas flutuantes */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(20)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className="absolute w-2 h-2 bg-yellow-400/60 dark:bg-yellow-400/20 rounded-full"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                        }}
-                        animate={{
-                            y: [0, -20, 0],
-                            opacity: [0.6, 1, 0.6],
-                        }}
-                        transition={{
-                            duration: 3 + Math.random() * 2,
-                            repeat: Infinity,
-                            delay: Math.random() * 2,
-                        }}
-                    />
-                ))}
-            </div>
+            <RandomParticles count={20} seed={101} />
            
             {/* Seção de texto sobre mim */}
             <motion.div 
@@ -58,15 +39,18 @@ export const About_me = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
             >
-                <motion.h1 
-                    className="py-5 text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent"
+                <motion.div 
+                    className="py-5 flex items-center gap-3"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
                 >
-                    {t("about-me.title")}
-                </motion.h1>
+                   
+                    <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">
+                        {t("about-me.title")}
+                    </h1>
+                </motion.div>
                 <ExpandableText text={t("about-me.description")} maxLength={250} />
             </motion.div>
                         
@@ -135,3 +119,37 @@ export const About_me = () => {
         </section>
     );
 };
+
+// Componente de partículas determinísticas para evitar mismatch de hidratação
+const RandomParticles = ({ count, seed }: { count: number; seed: number }) => {
+    const particles = useMemo(() => {
+        const createSeededRandom = (s: number) => {
+            let x = s >>> 0;
+            return () => {
+                x = (x * 1664525 + 1013904223) >>> 0;
+                return x / 4294967296;
+            }
+        };
+        const rand = createSeededRandom(seed);
+        return Array.from({ length: count }).map(() => ({
+            left: `${rand() * 100}%`,
+            top: `${rand() * 100}%`,
+            duration: 3 + rand() * 2,
+            delay: rand() * 2
+        }));
+    }, [count, seed]);
+
+    return (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {particles.map((p, i) => (
+                <motion.div
+                    key={i}
+                    className="absolute w-2 h-2 bg-yellow-400/60 dark:bg-yellow-400/20 rounded-full"
+                    style={{ left: p.left, top: p.top }}
+                    animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }}
+                    transition={{ duration: p.duration, repeat: Infinity, delay: p.delay }}
+                />
+            ))}
+        </div>
+    );
+}

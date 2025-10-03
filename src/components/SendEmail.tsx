@@ -10,6 +10,7 @@ export const SendEmail = () =>{
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
+    const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
 
     function handleSendEmail(e: FormEvent){
         e.preventDefault();
@@ -32,15 +33,26 @@ export const SendEmail = () =>{
             setName('');
             setEmail('');
             setMessage('');
+            if (response.status === 200) {
+                setFeedback({ type: 'success', text: t('contact.form.success') as string });
+                setTimeout(() => setFeedback(null), 4000);
+            }
 
         }, (error)=>{
             console.log("ERROR",error);
+            setFeedback({ type: 'error', text: t('contact.form.error') as string });
+            setTimeout(() => setFeedback(null), 4000);
         })
 
     }
   
     return (
       <div className="flex flex-col h-full w-full md:w-1/2 justify-between text-justify py-4 dark:text-white text-black">
+        {feedback && (
+          <div className={`${feedback.type === 'success' ? 'bg-green-100 border-green-300 text-green-800 dark:bg-green-900/20 dark:text-green-300 dark:border-green-700' : 'bg-red-100 border-red-300 text-red-800 dark:bg-red-900/20 dark:text-red-300 dark:border-red-700'} border rounded-md px-4 py-3 mb-4`}>
+            {feedback.text}
+          </div>
+        )}
         <div className="mb-4">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{t("contact.form.title")}</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.form.description")}</p>
