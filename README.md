@@ -2,7 +2,8 @@
 
 Este repositório contém o código-fonte do meu site de portfólio pessoal, desenvolvido com Next.js, Tailwind CSS, React e TypeScript. O site é totalmente responsivo e conta com funcionalidades de troca de tema (dark mode e light mode) e internacionalização (troca de idiomas).
 
-![image](https://github.com/user-attachments/assets/d5d6b7da-f6d4-468b-82d9-6650f2619c44)
+<img width="1895" height="900" alt="image" src="https://github.com/user-attachments/assets/8c247473-0afc-42bc-a837-626f0b786df7" />
+
 
 ## Tecnologias Utilizadas
 
