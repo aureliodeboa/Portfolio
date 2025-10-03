@@ -22,8 +22,8 @@ const Page = () =>{
      {/* <Container> */}
         <Navbar/>
         <Profile/>
-        <Projects/>
         <About_me/>
+        <Projects/>
         <Contact/>
         <Footer/>
       {/*</Container> */}
