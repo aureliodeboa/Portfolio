@@ -14,8 +14,18 @@ import {
     SiFlutter,
     SiDart,
     SiFramer,
-    SiKanban,
-    SiScrum
+    SiTrello,
+    SiJirasoftware,
+    SiPhp,
+    SiLaravel,
+    SiPostgresql,
+    SiDocker,
+    SiGithub,
+    SiDjango,
+    SiPython,
+    SiFigma,
+    SiBackstage,
+    SiPowerbi
 } from "react-icons/si"
 import { IconType } from "react-icons"
 
@@ -24,28 +34,44 @@ type Props = {
     label: string;
 }
 
-// Mapeamento de tecnologias para ícones
+// Mapeamento de tecnologias para ícones (chaves normalizadas em minúsculas)
 const techIcons: { [key: string]: IconType } = {
-    "React": FaReact,
-    "Html": FaHtml5,
-    "Css": FaCss3Alt,
-    "Javascript": FaJs,
-    "Typescript": SiTypescript,
-    "Tailwind": SiTailwindcss,
-    "Next.js": SiNextdotjs,
-    "Git": FaGitAlt,
-    "Flutter": SiFlutter,
-    "Dart": SiDart,
-    "Framer Motion": SiFramer,
-    "Kanban": SiKanban,
-    "Scrum": SiScrum,
-    "Reducers": FaReact,
-    "Contexts": FaReact,
-    "Node.js": FaNodeJs
+    "react": FaReact,
+    "html": FaHtml5,
+    "css": FaCss3Alt,
+    "javascript": FaJs,
+    "typescript": SiTypescript,
+    "tailwind": SiTailwindcss,
+    "next.js": SiNextdotjs,
+    "nextjs": SiNextdotjs,
+    "git": FaGitAlt,
+    "github": SiGithub,
+    "flutter": SiFlutter,
+    "dart": SiDart,
+    "framer motion": SiFramer,
+    "framer": SiFramer,
+    "kanban": SiTrello,
+    "scrum": SiJirasoftware,
+    "reducers": FaReact,
+    "contexts": FaReact,
+    "node.js": FaNodeJs,
+    "nodejs": FaNodeJs,
+    "php": SiPhp,
+    "laravel": SiLaravel,
+    "postgresql": SiPostgresql,
+    "docker": SiDocker,
+    "django": SiDjango,
+    "python": SiPython,
+    "figma": SiFigma,
+    "backstage.io": SiBackstage,
+    "backstage": SiBackstage,
+    "power bi": SiPowerbi,
+    "git flow": FaGitAlt
 };
 
 export const ToolsComponent = ({ label, id }: Props) => {
-    const Icon = techIcons[label];
+    const normalizedLabel = label.trim().toLowerCase();
+    const Icon = techIcons[normalizedLabel];
     
     return (
         <motion.div 
