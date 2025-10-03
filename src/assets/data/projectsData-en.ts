@@ -13,7 +13,7 @@ export const projectData_en: projectType[] = [
         id: 1,
         imageProject: micael,
         title: "Micael Contador",
-        description: "A professional website developed for Micael Henrique, an accountant specialized in tax management and consultancy for entrepreneurs and freelancers. The website connects clients to the services offered and provides information about his professional activities.",
+        description: "Professional website for an accountant, focused on services and lead capture.",
         linkGithub: "https://github.com/aureliodeboa/micael-portfolio",
         usedtechnologies: ["TypeScript", "Tailwind", "React", "Next.js", "Git", "Kanban", "Framer Motion"],
         urlProject: "https://micaelcontador.netlify.app/"
@@ -22,7 +22,7 @@ export const projectData_en: projectType[] = [
         id: 2,
         imageProject: imgI9site,
         title: "I9 Junior Website",
-        description: "I9 is a junior enterprise at the Federal University of the São Francisco Valley, linked to the Computing Department. It provides technological solutions for companies and entrepreneurs by developing websites, applications, and customized systems. I developed the front-end of this website.",
+        description: "Institutional website for I9 Jr; I developed the front-end.",
         linkGithub: "https://github.com/inove-jr/i9-website",
         usedtechnologies: ["TypeScript", "Tailwind", "React", "Next.js", "Git", "Kanban", "Scrum"],
         urlProject: "https://inove-jr.vercel.app/"
@@ -31,7 +31,7 @@ export const projectData_en: projectType[] = [
         id: 3,
         imageProject: imgPomodoro,
         title: "Pomodoro Timer",
-        description: "The Pomodoro Timer is a customizable web application that allows users to personalize their own Pomodoro timer. With this application, you can set work time, break time, choose colors, and even select your preferred font. This application is a useful tool for increasing productivity and improving time management.",
+        description: "Customizable Pomodoro timer with themes and adjustable times.",
         linkGithub: "https://github.com/aureliodeboa/Pomodoro",
         usedtechnologies: ["Html", "Css", "Javascript", "Git"],
         urlProject: "https://silver-chebakia-3fd8cb.netlify.app/"
@@ -40,7 +40,7 @@ export const projectData_en: projectType[] = [
         id: 4,
         imageProject: imgStarbuks,
         title: "Starbucks",
-        description: "This is a Starbucks homepage project developed to practice CSS grid-template property skills. In this project, I used only HTML and CSS to create a simple replica of the Starbucks homepage.",
+        description: "Simple Starbucks homepage replica using only HTML and CSS.",
         linkGithub: "https://github.com/aureliodeboa/Starbucks?tab=readme-ov-file",
         usedtechnologies: ["Html", "Css", "Git"],
         urlProject: "https://inquisitive-cendol-2fd1cd.netlify.app/"
@@ -49,7 +49,7 @@ export const projectData_en: projectType[] = [
         id: 5,
         imageProject: imgTodoReact,
         title: "To-Do List",
-        description: "This is a simple To-Do List project developed using React, Next.js, and TypeScript. The application allows users to add, mark as completed, and remove tasks from the list.",
+        description: "To-Do list with Context API and Reducers in Next.js.",
         linkGithub: "https://github.com/aureliodeboa/To-do-with-React?tab=readme-ov-file",
         usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Html", "Git"],
         urlProject: "https://master--gentle-snickerdoodle-46b5f2.netlify.app/"
@@ -58,7 +58,7 @@ export const projectData_en: projectType[] = [
         id: 6,
         imageProject: imgQuizReact,
         title: "Quiz App",
-        description: "This project is a Quiz application developed with React, Next.js, Tailwind CSS, and TypeScript. It allows users to answer a series of questions and displays correct and incorrect alternatives at the end.",
+        description: "Quiz in React/Next.js with feedback on correct and wrong answers.",
         linkGithub: "https://github.com/aureliodeboa/Quiz-app?tab=readme-ov-file",
         usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Html", "Git"],
         urlProject: "https://fastidious-kangaroo-7e1acc.netlify.app/"
@@ -67,7 +67,7 @@ export const projectData_en: projectType[] = [
         id: 7,
         imageProject: imgSibi,
         title: "SIBI in the Palm of Your Hand",
-        description: "SIBI (Integrated Libraries System of UNIVASF) is an application developed using the Flutter framework. It serves as a user guide for the library system of the Federal University of Vale do São Francisco (UNIVASF), offering quick and intuitive access to SIBI information.",
+        description: "Guide app for UNIVASF's SIBI built with Flutter.",
         linkGithub: "https://github.com/aureliodeboa/AplicativoSIBI?tab=readme-ov-file",
         usedtechnologies: ["Flutter", "Dart", "Scrum", "Git"],
         urlProject: "https://www.youtube.com/watch?v=p7WKsB0vFxk&feature=youtu.be"
@@ -76,7 +76,7 @@ export const projectData_en: projectType[] = [
         id: 8,
         imageProject: imgColeman,
         title: "Tribute to Ronnie Coleman",
-        description: "This is a tribute page project for Ronnie Coleman, created to test my front-end skills. The page aims to honor and highlight the exceptional career of renowned bodybuilder Ronnie Coleman. The page is fully responsive, adapting to different screen sizes and devices.",
+        description: "Responsive tribute page to bodybuilder Ronnie Coleman.",
         linkGithub: "https://github.com/aureliodeboa/Tribute-Ronnie-Coleman",
         usedtechnologies: ["Html", "Css", "Git"],
         urlProject: "https://aureliodeboa.github.io/Tribute-Ronnie-Coleman/"

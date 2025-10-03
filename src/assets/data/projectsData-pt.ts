@@ -13,7 +13,7 @@ export const projectData_pt: projectType[] = [
         id: 1,
         imageProject: micael,
         title: "Micael Contador",
-        description: "Site profissional desenvolvido para Micael Henrique, contador especializado em gestão tributária e consultoria para empresários e autônomos. Conecta clientes aos serviços oferecidos e fornece informações sobre sua atuação",
+        description: "Site profissional para contador, focado em serviços e captação de clientes.",
         linkGithub: "https://github.com/aureliodeboa/micael-portfolio",
         usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Git", "Kanban", "Framer Motion"],
         urlProject: "https://micaelcontador.netlify.app/"
@@ -22,7 +22,7 @@ export const projectData_pt: projectType[] = [
         id: 2,
         imageProject: imgI9site,
         title: "Site I9 Junior",
-        description: "A I9 é uma empresa júnior da Universidade Federal do Vale do São Francisco, vinculada ao Colegiado de Computação. Ela oferece soluções tecnológicas para empresas e empreendedores, desenvolvendo sites, aplicativos e sistemas personalizados. Eu desenvolvi o front-end deste site.",
+        description: "Site institucional da I9 Jr; atuei no front-end.",
         linkGithub: "https://github.com/inove-jr/i9-website",
         usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Git", "Kanban", "Scrum"],
         urlProject: "https://inove-jr.vercel.app/"
@@ -31,7 +31,7 @@ export const projectData_pt: projectType[] = [
         id: 3,
         imageProject: imgPomodoro,
         title: "Pomodoro Timer",
-        description: "O Pomodoro é uma aplicação web customizavel que permite aos usuários personalizar o seu próprio temporizador Pomodoro. Com esta aplicação, você pode definir o tempo de trabalho, o tempo de pausa, escolher cores e até mesmo a fonte que mais lhe agrada. Esta aplicação é uma ferramenta útil para aumentar a produtividade e melhorar a gestão do tempo.",
+        description: "Timer Pomodoro personalizável com temas e tempos configuráveis.",
         linkGithub: "https://github.com/aureliodeboa/Pomodoro",
         usedtechnologies: ["Html", "Css", "Javascript", "Git"],
         urlProject: "https://silver-chebakia-3fd8cb.netlify.app/"
@@ -40,7 +40,7 @@ export const projectData_pt: projectType[] = [
         id: 4,
         imageProject: imgStarbuks,
         title: "Starbucks",
-        description: "Este é um projeto de página do Starbucks desenvolvido para treinar habilidades com a propriedade grid-template do CSS. Neste projeto, utilizei apenas HTML e CSS para criar uma réplica simples da página inicial do Starbucks.",
+        description: "Réplica simples da homepage Starbucks usando apenas HTML e CSS.",
         linkGithub: "https://github.com/aureliodeboa/Starbucks?tab=readme-ov-file",
         usedtechnologies: ["Html", "Css", "Git"],
         urlProject: "https://inquisitive-cendol-2fd1cd.netlify.app/"
@@ -49,7 +49,7 @@ export const projectData_pt: projectType[] = [
         id: 5,
         imageProject: imgTodoReact,
         title: "To-do-with-Reducers",
-        description: "Este é um aplicativo de Lista de Tarefas construído usando Next.js, API de Contexto do React, e Reducers para gerenciamento de estado, Tailwind CSS para estilização e TypeScript para segurança de tipos. O aplicativo permite que os usuários adicionem, excluam e gerenciem suas tarefas de forma eficaz. O foco principal deste projeto é demonstrar o uso da API de Contexto e Reducers do React para gerenciamento de estado em uma aplicação web moderna.",
+        description: "Lista de tarefas com Context API e Reducers em Next.js.",
         linkGithub: "https://github.com/aureliodeboa/To-do-with-Reducers",
         usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Reducers", "Contexts", "Git"]
     },
@@ -57,7 +57,7 @@ export const projectData_pt: projectType[] = [
         id: 6,
         imageProject: imgQuizReact,
         title: "Quiz App",
-        description: "Este projeto é um Quiz desenvolvido com React, Next.js, Tailwind CSS e TypeScript. Ele permite que os usuários respondam a uma série de perguntas e, ao final, exibe as alternativas corretas e erradas.",
+        description: "Quiz em React/Next.js com feedback de acertos e erros.",
         linkGithub: "https://github.com/aureliodeboa/Quiz-app?tab=readme-ov-file",
         usedtechnologies: ["Typescript", "Tailwind", "React", "Next.js", "Html", "Git"],
         urlProject: "https://fastidious-kangaroo-7e1acc.netlify.app/"
@@ -66,7 +66,7 @@ export const projectData_pt: projectType[] = [
         id: 7,
         imageProject: imgSibi,
         title: "SIBI na Palma da Mão",
-        description: "O SIBI (Sistema Integrado de Bibliotecas da UNIVASF) é um aplicativo desenvolvido utilizando o framework Flutter. Ele serve como um guia de usuário para o sistema da biblioteca da Universidade Federal do Vale do São Francisco (UNIVASF), oferecendo acesso rápido e intuitivo a informações do SIBI.",
+        description: "App guia do SIBI (UNIVASF) feito em Flutter.",
         linkGithub: "https://github.com/aureliodeboa/AplicativoSIBI?tab=readme-ov-file",
         usedtechnologies: ["Flutter", "Dart", "Scrum", "Git"],
         urlProject: "https://www.youtube.com/watch?v=p7WKsB0vFxk&feature=youtu.be"
@@ -75,7 +75,7 @@ export const projectData_pt: projectType[] = [
         id: 8,
         imageProject: imgColeman,
         title: "Tribute Ronnie Coleman",
-        description: "Esta é uma página em homenagem a Ronnie Coleman, criado como forma de testar meus conhecimentos em front-end. A página tem como objetivo homenagear e destacar a carreira excepcional do renomado fisiculturista Ronnie Coleman. A página é totalmente responsiva, adaptando-se a diferentes tamanhos de tela e dispositivos.",
+        description: "Página tributo responsiva ao fisiculturista Ronnie Coleman.",
         linkGithub: "https://github.com/aureliodeboa/Tribute-Ronnie-Coleman",
         usedtechnologies: ["Html", "Css", "Git"],
         urlProject: "https://aureliodeboa.github.io/Tribute-Ronnie-Coleman/"
