@@ -20,6 +20,7 @@ import "swiper/css/effect-coverflow";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+
 //import os dados dos projetos
 import { projectData_pt } from "@/assets/data/projectsData-pt";
 import { projectData_en } from "@/assets/data/projectsData-en";
@@ -83,9 +84,12 @@ export const Projects = () => {
           }}
           viewport={{ once: true }}
         >
-          <h1 className="text-3xl md:text-5xl px-4 py-5 sm:px-10 md:px-20 leading-10 font-bold text-left bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">
-            {t("projects.title")}
-          </h1>
+          <div className="flex items-center gap-3 px-4 sm:px-10 md:px-20 py-5">
+    
+            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">
+              {t("projects.title")}
+            </h1>
+          </div>
           <motion.h6 
             className="pt-5 px-4 sm:px-10 md:px-20 text-base md:text-lg text-left"
             initial={{ opacity: 0, y: 30 }}

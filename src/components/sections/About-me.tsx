@@ -58,15 +58,18 @@ export const About_me = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
             >
-                <motion.h1 
-                    className="py-5 text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent"
+                <motion.div 
+                    className="py-5 flex items-center gap-3"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
                 >
-                    {t("about-me.title")}
-                </motion.h1>
+                   
+                    <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">
+                        {t("about-me.title")}
+                    </h1>
+                </motion.div>
                 <ExpandableText text={t("about-me.description")} maxLength={250} />
             </motion.div>
                         
