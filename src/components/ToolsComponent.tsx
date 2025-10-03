@@ -5,7 +5,8 @@ import {
     FaCss3Alt, 
     FaJs, 
     FaGitAlt,
-    FaNodeJs
+    FaNodeJs,
+    FaChartBar
 } from "react-icons/fa"
 import { 
     SiTypescript, 
@@ -25,7 +26,6 @@ import {
     SiPython,
     SiFigma,
     SiBackstage,
-    SiPowerbi
 } from "react-icons/si"
 import { IconType } from "react-icons"
 
@@ -65,7 +65,7 @@ const techIcons: { [key: string]: IconType } = {
     "figma": SiFigma,
     "backstage.io": SiBackstage,
     "backstage": SiBackstage,
-    "power bi": SiPowerbi,
+    "power bi": FaChartBar,
     "git flow": FaGitAlt
 };
 
