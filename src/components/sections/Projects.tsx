@@ -2,11 +2,20 @@ import { ProjectCard } from "../ProjectCard";
 
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  EffectCoverflow,
+} from "swiper/modules";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/effect-coverflow";
 
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -17,40 +26,17 @@ import { projectData_en } from "@/assets/data/projectsData-en";
 
 
 export const Projects = () => {
-  //função para pegar o tamanho da tela e retornar a quantidade dos cards
+  // Estado para detectar se é mobile
+  const [isMobile, setIsMobile] = useState(false);
 
-  const getSlidesPerView = () => {
-    //o primeiro if resolve o problema do window undefined
-    if (typeof window !== "undefined") {
-      if (window.innerWidth > 1720) {
-      
-        return 4;
-      } else if (window.innerWidth > 1000) {
-        return 3;
-      } else if (window.innerWidth > 600) {
-        return 2;
-      } else {
-        return 1;
-      }
-    }
-   
-  };
-
-  //useState para a quantidade de cards  que seram mostrados 
-  const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
-
-  //effect para fazer a mudança quantidade de cards toda vez que  o tamanho da tela mudar
   useEffect(() => {
     const handleResize = () => {
-      setSlidesPerView(getSlidesPerView());
+      setIsMobile(window.innerWidth < 1024); // até 1024px é considerado "mobile"
     };
 
-    window.addEventListener('resize', handleResize);
-
-    //cleanup
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    handleResize(); // chama uma vez
+    window.addEventListener("resize", handleResize); // escuta mudanças
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   //faz a troca do idioma dos cards de experiencia
@@ -129,58 +115,46 @@ export const Projects = () => {
           viewport={{ once: true }}
         >
           <Swiper
-            modules={[Pagination, EffectCoverflow]}
-            effect={'coverflow'}
+            modules={[Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]}
+            effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            loop={true}
-            slidesPerView={slidesPerView}
-            pagination={{ el: '.swiper-pagination', clickable: true }}
+            loop={!isMobile} // apenas ativa o loop se NÃO for mobile
             coverflowEffect={{
-              rotate: 0,
+              rotate: 3,
               stretch: 0,
-              depth: 100,
-              modifier: 4.5,
+              depth: 120,
+              modifier: 3.2,
+              slideShadows: true,
             }}
-            className="w-full"
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+              1720: { slidesPerView: 4 },
+            }}
+            className="w-full h-full px-2"
           >
             {
               currentProjectData?.map((projectData, index) => (
-                <SwiperSlide key={index}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 50, rotateY: -15 }}
-                    whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: index * 0.1,
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                      type: "spring",
-                      stiffness: 80
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{ 
-                      scale: 1.05, 
-                      rotateY: 5,
-                      boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
-                    }}
-                  >
-                    <ProjectCard 
-                      id={projectData.id} 
-                      title={projectData.title} 
-                      description={projectData.description} 
-                      linkGithub={projectData.linkGithub}
-                      usedtechnologies={projectData.usedtechnologies} 
-                      imageProject={projectData.imageProject} 
-                      urlProject={projectData.urlProject} 
-                    />
-                  </motion.div>
+                <SwiperSlide key={index} className="flex justify-center px-2">
+                  <ProjectCard 
+                    id={projectData.id} 
+                    title={projectData.title} 
+                    description={projectData.description} 
+                    linkGithub={projectData.linkGithub}
+                    usedtechnologies={projectData.usedtechnologies} 
+                    imageProject={projectData.imageProject} 
+                    urlProject={projectData.urlProject} 
+                  />
                 </SwiperSlide>
               ))
             }
-            
-            <div className="relative slider-controler flex flex-row justify-center items-center gap-2 mt-8 w-full h-8">
-              <div className="absolute swiper-pagination"></div>
-            </div>
           </Swiper>
         </motion.div>
       </div>

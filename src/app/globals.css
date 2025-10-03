@@ -31,21 +31,61 @@ body {
     text-wrap: balance;
   }
 }
-/* Personalização das bolinhas dos cards dos projetos*/
+/* Personalização do Swiper */
 
-/* target all bullets */
+/* Personalização das bolinhas da paginação */
 .swiper-pagination-bullet {
   background-color: rgb(71, 69, 69) !important;
   opacity: 1;
 }
 
-/* target all bullets */
 .dark .swiper-pagination-bullet {
   background-color: rgb(110, 110, 110) !important;
   opacity: 1;
 }
 
-.dark span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
+  background-color: rgb(202, 138, 4) !important;
+  opacity: 1;
+}
+
+.dark .swiper-pagination-bullet-active {
   background-color: rgb(255, 255, 255) !important;
   opacity: 1;
+}
+
+/* Personalização dos botões de navegação */
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(202, 138, 4) !important;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dark .swiper-button-prev,
+.dark .swiper-button-next {
+  color: rgb(250, 204, 21) !important;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(202, 138, 4, 0.9);
+  color: white !important;
+  transform: scale(1.1);
+}
+
+.dark .swiper-button-prev:hover,
+.dark .swiper-button-next:hover {
+  background-color: rgba(250, 204, 21, 0.9);
+  color: black !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px !important;
+  font-weight: bold;
 }

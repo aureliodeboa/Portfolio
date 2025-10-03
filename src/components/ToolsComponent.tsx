@@ -1,16 +1,57 @@
 import { motion } from "framer-motion"
+import { 
+    FaReact, 
+    FaHtml5, 
+    FaCss3Alt, 
+    FaJs, 
+    FaGitAlt,
+    FaNodeJs
+} from "react-icons/fa"
+import { 
+    SiTypescript, 
+    SiTailwindcss, 
+    SiNextdotjs,
+    SiFlutter,
+    SiDart,
+    SiFramer,
+    SiKanban,
+    SiScrum
+} from "react-icons/si"
+import { IconType } from "react-icons"
 
 type Props = {
     id: number;
     label: string;
 }
 
+// Mapeamento de tecnologias para ícones
+const techIcons: { [key: string]: IconType } = {
+    "React": FaReact,
+    "Html": FaHtml5,
+    "Css": FaCss3Alt,
+    "Javascript": FaJs,
+    "Typescript": SiTypescript,
+    "Tailwind": SiTailwindcss,
+    "Next.js": SiNextdotjs,
+    "Git": FaGitAlt,
+    "Flutter": SiFlutter,
+    "Dart": SiDart,
+    "Framer Motion": SiFramer,
+    "Kanban": SiKanban,
+    "Scrum": SiScrum,
+    "Reducers": FaReact,
+    "Contexts": FaReact,
+    "Node.js": FaNodeJs
+};
+
 export const ToolsComponent = ({ label, id }: Props) => {
+    const Icon = techIcons[label];
+    
     return (
         <motion.div 
             key={id}
             className="shadow-md shadow-black dark:shadow-gray-800 rounded-lg text-xs sm:text-sm 
-                     flex justify-center items-center border-[1px] border-[#505252] 
+                     flex justify-center items-center gap-2 border-[1px] border-[#505252] 
                      hover:shadow-xl hover:shadow-black dark:hover:shadow-gray-600 
                      py-[4px] px-3 bg-white dark:bg-[#151414] 
                      hover:bg-yellow-50 dark:hover:bg-yellow-900/20
@@ -30,6 +71,7 @@ export const ToolsComponent = ({ label, id }: Props) => {
                 delay: id * 0.05 
             }}
         >
+            {Icon && <Icon className="text-yellow-600 dark:text-yellow-400" size={16} />}
             <span className="text-gray-800 dark:text-gray-200 font-medium">
                 {label}
             </span>
