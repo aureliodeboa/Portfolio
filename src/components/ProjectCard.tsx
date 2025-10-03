@@ -9,12 +9,8 @@ export const ProjectCard = (projectCardContent: projectType) => {
             className="h-auto w-[90%] md:w-[450px] flex mx-3 items-center flex-col 
                      border-b-2 border-yellow-600 text-black dark:text-white 
                      bg-[#EEE] dark:bg-[#151414] gap-3 rounded-lg shadow-lg 
-                     hover:shadow-2xl transition-all duration-300 overflow-hidden
+                     transition-all duration-300 overflow-hidden
                      backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90 pb-4"
-            whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
-            }}
             transition={{ 
                 type: "spring", 
                 stiffness: 300, 
@@ -27,7 +23,6 @@ export const ProjectCard = (projectCardContent: projectType) => {
                     className="p-3 md:p-6 rounded-lg w-full h-auto transition-transform duration-300" 
                     src={projectCardContent.imageProject?.src} 
                     alt={`Imagem do projeto ${projectCardContent.title}`}
-                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                 />
             </div>
@@ -35,7 +30,6 @@ export const ProjectCard = (projectCardContent: projectType) => {
             {/* Título do projeto */}
             <motion.div 
                 className="w-full"
-                whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400 }}
             >
                 <h1 className="text-sm sm:text-lg text-center px-3 md:text-2xl font-bold 
@@ -50,7 +44,6 @@ export const ProjectCard = (projectCardContent: projectType) => {
                 className="text-xs sm:text-sm px-4 md:text-base md:px-6 text-justify 
                          text-gray-700 dark:text-gray-300 leading-relaxed"
                 initial={{ opacity: 0.8 }}
-                whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
             >
                 {projectCardContent.description}
@@ -90,13 +83,9 @@ export const ProjectCard = (projectCardContent: projectType) => {
                     rel="noopener" 
                     target="_blank"
                     className="flex items-center gap-2 px-6 py-2.5 bg-gray-800 dark:bg-gray-700 
-                             text-white rounded-lg shadow-md hover:shadow-lg 
+                             text-white rounded-lg shadow-md 
                              transition-all duration-300 text-sm font-medium
-                             border-2 border-transparent hover:border-yellow-500"
-                    whileHover={{ 
-                        scale: 1.05,
-                        y: -2
-                    }}
+                             border-2 border-transparent"
                     whileTap={{ scale: 0.95 }}
                 >
                     <FaGithub size={18} />
@@ -112,13 +101,9 @@ export const ProjectCard = (projectCardContent: projectType) => {
                         className="flex items-center gap-2 px-6 py-2.5 
                                  bg-gradient-to-r from-yellow-500 to-yellow-600 
                                  dark:from-yellow-600 dark:to-yellow-700
-                                 text-white rounded-lg shadow-md hover:shadow-lg 
+                                 text-white rounded-lg shadow-md 
                                  transition-all duration-300 text-sm font-medium
-                                 hover:from-yellow-600 hover:to-yellow-700"
-                        whileHover={{ 
-                            scale: 1.05,
-                            y: -2
-                        }}
+                                 "
                         whileTap={{ scale: 0.95 }}
                     >
                         <FaExternalLinkAlt size={16} />
