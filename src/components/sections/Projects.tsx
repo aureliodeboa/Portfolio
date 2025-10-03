@@ -17,7 +17,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/effect-coverflow";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
@@ -46,27 +46,46 @@ export const Projects = () => {
   let currentProjectData;
   t("current-language.locale")=="pt"?currentProjectData=projectData_pt:currentProjectData=projectData_en;
  
+  // RNG determinístico para evitar mismatch de hidratação
+  const createSeededRandom = (seed: number) => {
+    let s = seed >>> 0;
+    return () => {
+      s = (s * 1664525 + 1013904223) >>> 0;
+      return s / 4294967296;
+    }
+  };
+
+  const particles = useMemo(() => {
+    const rand = createSeededRandom(42);
+    const count = 15;
+    return Array.from({ length: count }).map(() => ({
+      left: `${rand() * 100}%`,
+      top: `${rand() * 100}%`,
+      duration: 3 + rand() * 2,
+      delay: rand() * 2
+    }));
+  }, []);
 
   return (
     <section id="projects" className="relative h-auto py-16 flex flex-col items-center bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white w-full overflow-hidden">
       {/* Partículas flutuantes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {particles.map((p, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-yellow-400/60 dark:bg-yellow-400/20 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: p.left,
+              top: p.top,
             }}
             animate={{
               y: [0, -20, 0],
               opacity: [0.6, 1, 0.6],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: p.duration,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: p.delay,
             }}
           />
         ))}
