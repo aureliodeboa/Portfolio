@@ -42,6 +42,8 @@
             "message":"Enter your message...",
             "button":"Send Message",
             "validation":"Fill out the form",
+            "success":"Message sent successfully!",
+            "error":"We couldn't send your message. Please try again.",
             "motivational":"Let's create something amazing together! 💫"
         }
             

@@ -36,6 +36,8 @@
             "message":"Digite sua mensagem...",
             "button":"Enviar Mensagem",
             "validation":"Preencha o formulário",
+            "success":"Mensagem enviada com sucesso!",
+            "error":"Não foi possível enviar sua mensagem. Tente novamente.",
             "motivational":"Vamos criar algo incrível juntos! 💫"
         }
     },
