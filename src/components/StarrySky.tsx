@@ -23,6 +23,11 @@ export const StarrySky = () => {
   const starsRef = useRef<Star[]>([]);
   const shootingStarsRef = useRef<ShootingStar[]>([]);
   const particlesRef = useRef<{x: number, y: number, vx: number, vy: number, life: number}[]>([]);
+  const lastFrameTimeRef = useRef(0);
+  const isAnimatingRef = useRef(false);
+  const isInViewRef = useRef(true);
+  const reduceMotionRef = useRef(false);
+  const frameIntervalRef = useRef(1000 / 30);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -35,31 +40,46 @@ export const StarrySky = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      createStars();
+      if (reduceMotionRef.current) {
+        drawStaticFrame();
+      }
     };
 
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    const calculateStarCount = () => {
+      const area = canvas.width * canvas.height;
+      const baseCount = Math.floor(area / 12000);
+      return Math.max(60, Math.min(160, baseCount));
+    };
 
     // Criar estrelas fixas
     const createStars = () => {
       const stars: Star[] = [];
-      const numStars = 200;
-      
+      const numStars = calculateStarCount();
+
       for (let i = 0; i < numStars; i++) {
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          opacity: Math.random() * 0.8 + 0.2,
+          size: Math.random() * 1.8 + 0.4,
+          opacity: Math.random() * 0.6 + 0.2,
           speed: Math.random() * 0.02 + 0.01
         });
       }
-      
+
       starsRef.current = stars;
     };
 
+    const MAX_SHOOTING_STARS = 2;
+    const MAX_PARTICLES = 120;
+    const SHOOTING_STAR_CHANCE = 0.0025;
+
     // Criar estrela cadente
     const createShootingStar = () => {
+      if (shootingStarsRef.current.length >= MAX_SHOOTING_STARS) {
+        return;
+      }
+
       const shootingStar: ShootingStar = {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height * 0.3,
@@ -75,6 +95,10 @@ export const StarrySky = () => {
     // Criar partículas
     const createParticles = (x: number, y: number) => {
       for (let i = 0; i < 10; i++) {
+        if (particlesRef.current.length >= MAX_PARTICLES) {
+          particlesRef.current.shift();
+        }
+
         particlesRef.current.push({
           x: x,
           y: y,
@@ -94,29 +118,53 @@ export const StarrySky = () => {
       };
     };
 
-    // Função de animação
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+    const drawStaticFrame = () => {
       const colors = getThemeColors();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = colors.starColor;
+      ctx.shadowColor = colors.shadowColor;
+      ctx.shadowBlur = 6;
 
-      // Desenhar estrelas fixas
       starsRef.current.forEach(star => {
-        ctx.save();
         ctx.globalAlpha = star.opacity;
-        ctx.fillStyle = colors.starColor;
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
         ctx.fill();
-        
-        // Efeito de brilho
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = colors.shadowColor;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * 0.5, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
       });
+
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
+    };
+
+    // Função de animação
+    const animate = (timestamp: number) => {
+      if (!isAnimatingRef.current) {
+        return;
+      }
+
+      if (timestamp - lastFrameTimeRef.current < frameIntervalRef.current) {
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
+      lastFrameTimeRef.current = timestamp;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const colors = getThemeColors();
+      ctx.fillStyle = colors.starColor;
+      ctx.shadowColor = colors.shadowColor;
+      ctx.shadowBlur = 6;
+
+      // Desenhar estrelas fixas
+      starsRef.current.forEach(star => {
+        ctx.globalAlpha = star.opacity;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
 
       // Atualizar e desenhar estrelas cadentes
       shootingStarsRef.current = shootingStarsRef.current.filter(star => {
@@ -131,6 +179,7 @@ export const StarrySky = () => {
           ctx.lineWidth = 2;
           ctx.shadowBlur = 15;
           ctx.shadowColor = colors.shadowColor;
+          ctx.lineCap = 'round';
           
           ctx.beginPath();
           ctx.moveTo(star.x, star.y);
@@ -152,9 +201,9 @@ export const StarrySky = () => {
       particlesRef.current = particlesRef.current.filter(particle => {
         particle.x += particle.vx;
         particle.y += particle.vy;
-        particle.life -= 0.02;
-        particle.vx *= 0.98;
-        particle.vy *= 0.98;
+        particle.life -= 0.03;
+        particle.vx *= 0.97;
+        particle.vy *= 0.97;
 
         if (particle.life > 0) {
           ctx.save();
@@ -170,21 +219,94 @@ export const StarrySky = () => {
       });
 
       // Criar novas estrelas cadentes ocasionalmente
-      if (Math.random() < 0.005) {
+      if (Math.random() < SHOOTING_STAR_CHANCE) {
         createShootingStar();
       }
 
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    createStars();
-    animate();
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
+    const stopAnimation = () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
+        animationRef.current = undefined;
       }
+      isAnimatingRef.current = false;
+    };
+
+    const startAnimation = () => {
+      if (isAnimatingRef.current || reduceMotionRef.current) {
+        return;
+      }
+      isAnimatingRef.current = true;
+      lastFrameTimeRef.current = performance.now();
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    reduceMotionRef.current = prefersReducedMotion.matches;
+    frameIntervalRef.current = reduceMotionRef.current ? 1000 / 12 : 1000 / 30;
+
+    if (reduceMotionRef.current) {
+      drawStaticFrame();
+    } else {
+      startAnimation();
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        stopAnimation();
+        return;
+      }
+
+      if (isInViewRef.current && !reduceMotionRef.current) {
+        startAnimation();
+      }
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      isInViewRef.current = entry.isIntersecting;
+
+      if (reduceMotionRef.current) {
+        if (entry.isIntersecting) {
+          drawStaticFrame();
+        }
+        return;
+      }
+
+      if (entry.isIntersecting && document.visibilityState === 'visible') {
+        startAnimation();
+      } else {
+        stopAnimation();
+      }
+    }, { threshold: 0.1 });
+
+    observer.observe(canvas);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    const handleMotionChange = () => {
+      reduceMotionRef.current = prefersReducedMotion.matches;
+      frameIntervalRef.current = reduceMotionRef.current ? 1000 / 12 : 1000 / 30;
+      stopAnimation();
+
+      if (reduceMotionRef.current) {
+        drawStaticFrame();
+      } else if (isInViewRef.current && document.visibilityState === 'visible') {
+        startAnimation();
+      }
+    };
+
+    prefersReducedMotion.addEventListener('change', handleMotionChange);
+
+    return () => {
+      stopAnimation();
+      window.removeEventListener('resize', resizeCanvas);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      observer.disconnect();
+      prefersReducedMotion.removeEventListener('change', handleMotionChange);
     };
   }, []);
 

@@ -21,10 +21,13 @@ export const Profile = () =>{
 
   const handleDownload = () => {
       const link = document.createElement('a');
-      link.href = "https://aureliodeboa.github.io/Portfolio/aurelio_ribeiro.pdf"
+      link.href = "https://aureliodeboa.github.io/Portfolio/aurelio_ribeiro.pdf";
       link.target = '_blank';
+      link.rel = 'noopener';
+      link.download = 'aurelio_ribeiro.pdf';
+      document.body.appendChild(link);
       link.click();
-      URL.revokeObjectURL(link.href);
+      document.body.removeChild(link);
     };
   
     const handleLinkedIn = () => {
