@@ -1,34 +1,45 @@
 import { useTranslation } from "react-i18next";
-import { ExperienceCard } from "../ExperienceCard";
-import { experienceData_pt } from "@/assets/data/experienceData-pt";
-import { experienceData_en } from "@/assets/data/experienceData-en";
-import { useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useMemo } from "react";
 import ExpandableText from '@/components/ExpandableText';
-import { ScrollFloat, ScrollFloatItem } from "../ScrollFloat";
+import { ScrollFloat } from "../ScrollFloat";
+import InfiniteMenu from "../InfiniteMenu";
+import { aboutmeData_pt } from "@/assets/data/aboutmeData-pt";
+import { aboutmeData_en } from "@/assets/data/aboutmeData-en";
+
 
 export const About_me = () => {
     const { t } = useTranslation();
-    const [showAllExperiences, setShowAllExperiences] = useState(false);
-    
-    //faz a troca do idioma dos cards de experiencia
-    let experienceData;
-    t("current-language.locale") == "pt" ? experienceData = experienceData_pt : experienceData = experienceData_en;
-    
-    // Define quantas experiências mostrar inicialmente
-    const initialExperiencesCount = 3;
-    const displayedExperiences = showAllExperiences 
-        ? experienceData 
-        : experienceData.slice(0, initialExperiencesCount);
-    
-    // Textos para o botão baseado no idioma
-    const buttonText = t("current-language.locale") == "pt" 
-        ? (showAllExperiences ? "Ver menos" : "Ver mais") 
-        : (showAllExperiences ? "See less" : "See more");
+    const [isInView, setIsInView] = useState(false);
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            {
+                threshold: 0.3, // Considera "em vista" quando 30% da seção está visível
+                rootMargin: '0px'
+            }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
+    // Troca do idioma dos itens "sobre mim"
+    const aboutMeItems = t("current-language.locale") === "pt" ? aboutmeData_pt : aboutmeData_en;
     
     return (
-        <section id="about-me" className="relative flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-12 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid overflow-hidden">
+        <section ref={sectionRef} id="about-me" className="relative flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-12 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid overflow-hidden">
             {/* Partículas flutuantes */}
             <RandomParticles count={20} seed={101} />
            
@@ -53,69 +64,37 @@ export const About_me = () => {
                 </ScrollFloat>
                 <ExpandableText text={t("about-me.description")} maxLength={250} />
             </ScrollFloat>
-                        
-            {/* Seção de experiências */}
-            <motion.div 
-                id="experience" 
-                className="relative h-auto flex flex-col items-center py-10 gap-8 w-full"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                viewport={{ once: true }}
-            >
-                {/* Linha pontilhada central */}
-                <hr className="absolute w-[2px] left-1/2 transform -translate-x-1/2 h-full border-0 border-l-2 border-dotted border-black dark:border-white" />
 
-                {/* Container das experiências */}
-                <div className="w-full max-w-7xl px-4 sm:px-5 lg:px-10 xl:px-32 2xl:px-40">
-                    <AnimatePresence mode="wait">
-                        <div className="flex flex-col gap-8">
-                            {displayedExperiences.map((experience, index) => (
-                                <ScrollFloatItem 
-                                    key={experience.id} 
-                                    className="w-full flex justify-center"
-                                    yOffset={40}
-                                    rotateOffset={2}
-                                    scaleOffset={0.04}
-                                    delay={index * 0.1}
-                                >
-                                    <ExperienceCard 
-                                        id={experience.id} 
-                                        logoCompany={experience.logoCompany} 
-                                        titleCompany={experience.titleCompany} 
-                                        titleJob={experience.titleJob}
-                                        dateIn={experience.dateIn} 
-                                        dateOut={experience.dateOut} 
-                                        descriptionJob={experience.descriptionJob} 
-                                        usedtechnologies={experience.usedtechnologies}
-                                        subtitleCompany={experience.subtitleCompany}
-                                    />
-                                </ScrollFloatItem>
-                            ))}
-                        </div>
-                    </AnimatePresence>
-             </div>
-            
-                {/* Botão Ver mais/Ver menos */}
-                {experienceData.length > initialExperiencesCount && (
-                    <ScrollFloatItem
-                        className="mt-6 relative z-10"
-                        yOffset={30}
-                        rotateOffset={1}
-                        scaleOffset={0.02}
-                        delay={0.8}
-                    >
+            {/* Infinite Menu Section */}
+            <div className="relative w-full h-[100vh] sm:h-[90vh] md:h-[85vh] lg:min-h-[90vh] overflow-hidden bg-transparent">
+                 <InfiniteMenu items={aboutMeItems}/>
+                 
+                 {/* Botão para próxima seção (apenas mobile) */}
+                 <AnimatePresence>
+                    {isInView && (
                         <motion.button
-                            onClick={() => setShowAllExperiences(!showAllExperiences)}
-                            className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 relative z-10"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                            className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-4 shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                            initial={{ opacity: 0, y: 100 }}
+                            animate={{ 
+                                opacity: 1, 
+                                y: 0
+                            }}
+                            exit={{ 
+                                opacity: 0, 
+                                y: 100 
+                            }}
+                            transition={{ 
+                                duration: 0.4
+                            }}
+                            whileTap={{ scale: 0.98 }}
                         >
-                            {buttonText}
+                            <span className="font-semibold text-sm">Continuar para Experiências</span>
+                           
                         </motion.button>
-                    </ScrollFloatItem>
-                )}
-            </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
         </section>
     );
 };

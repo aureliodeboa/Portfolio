@@ -6,6 +6,7 @@ import '../i18nify';
 
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { About_me } from "@/components/sections/About-me";
+import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -23,6 +24,7 @@ const Page = () =>{
         <Navbar/>
         <Profile/>
         <About_me/>
+        <Experience/>
         <Projects/>
         <Contact/>
         <Footer/>
