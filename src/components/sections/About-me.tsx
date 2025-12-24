@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMemo } from "react";
 import ExpandableText from '@/components/ExpandableText';
+import { ScrollFloat, ScrollFloatItem } from "../ScrollFloat";
 
 export const About_me = () => {
     const { t } = useTranslation();
@@ -32,27 +33,26 @@ export const About_me = () => {
             <RandomParticles count={20} seed={101} />
            
             {/* Seção de texto sobre mim */}
-            <motion.div 
+            <ScrollFloat 
                 className="h-1/2 px-4 sm:px-10 md:px-20 w-full max-w-4xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
+                yOffset={60}
+                rotateOffset={2}
+                scaleOffset={0.05}
+                delay={0.2}
             >
-                <motion.div 
+                <ScrollFloat 
                     className="py-5 flex items-center gap-3"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
+                    yOffset={40}
+                    rotateOffset={1}
+                    delay={0.4}
                 >
                    
                     <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">
                         {t("about-me.title")}
                     </h1>
-                </motion.div>
+                </ScrollFloat>
                 <ExpandableText text={t("about-me.description")} maxLength={250} />
-            </motion.div>
+            </ScrollFloat>
                         
             {/* Seção de experiências */}
             <motion.div 
@@ -71,13 +71,13 @@ export const About_me = () => {
                     <AnimatePresence mode="wait">
                         <div className="flex flex-col gap-8">
                             {displayedExperiences.map((experience, index) => (
-                                <motion.div 
+                                <ScrollFloatItem 
                                     key={experience.id} 
                                     className="w-full flex justify-center"
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
+                                    yOffset={40}
+                                    rotateOffset={2}
+                                    scaleOffset={0.04}
+                                    delay={index * 0.1}
                                 >
                                     <ExperienceCard 
                                         id={experience.id} 
@@ -90,7 +90,7 @@ export const About_me = () => {
                                         usedtechnologies={experience.usedtechnologies}
                                         subtitleCompany={experience.subtitleCompany}
                                     />
-                                </motion.div>
+                                </ScrollFloatItem>
                             ))}
                         </div>
                     </AnimatePresence>
@@ -98,12 +98,12 @@ export const About_me = () => {
             
                 {/* Botão Ver mais/Ver menos */}
                 {experienceData.length > initialExperiencesCount && (
-                    <motion.div
+                    <ScrollFloatItem
                         className="mt-6 relative z-10"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.8 }}
-                        viewport={{ once: true }}
+                        yOffset={30}
+                        rotateOffset={1}
+                        scaleOffset={0.02}
+                        delay={0.8}
                     >
                         <motion.button
                             onClick={() => setShowAllExperiences(!showAllExperiences)}
@@ -113,7 +113,7 @@ export const About_me = () => {
                         >
                             {buttonText}
                         </motion.button>
-                    </motion.div>
+                    </ScrollFloatItem>
                 )}
             </motion.div>
         </section>

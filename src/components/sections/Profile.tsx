@@ -1,5 +1,25 @@
 import { VscGithubInverted,VscGithubAlt } from "react-icons/vsc";
-import { SiLinkedin,SiSpotify } from "react-icons/si";
+import { 
+  SiLinkedin,
+  SiSpotify,
+  SiReact,
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiNodedotjs,
+  SiGit,
+  SiDocker,
+  SiPostgresql,
+  SiDjango,
+  SiPhp,
+  SiLaravel,
+  SiGithub,
+  SiFlutter,
+  SiFigma,
+  SiHtml5,
+  SiDart,
+  SiTailwindcss
+} from "react-icons/si";
 import { LuMail } from "react-icons/lu";
 import { ButtonMidia } from "../ButtonMidia";
 import { BsDownload } from "react-icons/bs";
@@ -9,15 +29,42 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { StarrySky } from "../StarrySky";
+import { RotatingText } from "../RotatingText";
+import LogoLoop from "../LogoLoop";
+import { useTheme } from "@/contexts/ThemeContext";
 
 
 
 export const Profile = () =>{
   const { t } = useTranslation();
+  const themeContext = useTheme();
+  const theme = themeContext?.theme || 'dark';
   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Tecnologias das experiências
+  const techLogos = [
+    { node: <SiPhp />, title: "PHP", href: "https://www.php.net" },
+    { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com" },
+    { node: <SiReact />, title: "React", href: "https://react.dev" },
+    { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+    { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiPython />, title: "Python", href: "https://www.python.org" },
+    { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+  
+    { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com" },
+    { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org" },
+    { node: <SiFlutter />, title: "Flutter", href: "https://flutter.dev" },
+    { node: <SiDart />, title: "Dart", href: "https://dart.dev" },
+    { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
+    { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
+    { node: <SiDocker />, title: "Docker", href: "https://www.docker.com" },
+    { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
+    { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/docs/Web/JavaScript" },
+    { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/docs/Web/HTML" },
+  ];
 
   const handleDownload = () => {
       const link = document.createElement('a');
@@ -50,41 +97,64 @@ export const Profile = () =>{
           {/* Céu estrelado animado */}
           <StarrySky />
            
-          <motion.span
-           initial={{scale:0.3, opacity:0, y: 100, x: 0, rotate: -180}}
-           animate={{ 
-             opacity: 1, 
-             scale: 1, 
-             y: 0, 
-             x: 0,
-             rotate: 0
-           }}
-            transition={{
-              duration: 1.5,
-              delay: 0.3,
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 80
-            }}
-           whileHover={{ 
-             scale: 1.1, 
-             rotateY: 10,
-             boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
-           }}
-           whileTap={{
-               scale: 0.95,
-               rotateY: -5
+          {/* Container da imagem + LogoLoop */}
+          <div className="flex flex-col items-center gap-4 xl:ml-2 lg:ml-8 z-20 relative">
+            <motion.span
+             initial={{scale:0.3, opacity:0, y: 100, x: 0, rotate: -180}}
+             animate={{ 
+               opacity: 1, 
+               scale: 1, 
+               y: 0, 
+               x: 0,
+               rotate: 0
              }}
-            
-           className="flex justify-center xl:ml-2 lg:ml-8 z-20 relative rounded-[20%] lg:rounded-[15px]"> {/* Add z-20 to ensure it's above the background */}
-              <motion.img 
-                className="shadow-sm shadow-black dark:shadow-yellow-600 rounded-[20%] lg:rounded-[15px] h-[250px] w-[250px] lg:mt-0 md:h-[300px] md:w-[300px]" 
-                src={imageProfile.src} 
-                alt='imagem aurelio'
-                transition={{duration: 0.8, delay: 1.5}}
-              />
-          </motion.span>
+              transition={{
+                duration: 1.5,
+                delay: 0.3,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 80
+              }}
+             whileHover={{ 
+               scale: 1.1, 
+               rotateY: 10,
+               boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
+             }}
+             whileTap={{
+                 scale: 0.95,
+                 rotateY: -5
+               }}
+              
+             className="flex justify-center rounded-[20%] lg:rounded-[15px]">
+                <motion.img 
+                  className="shadow-sm shadow-black dark:shadow-yellow-600 rounded-[20%] lg:rounded-[15px] h-[250px] w-[250px] lg:mt-0 md:h-[300px] md:w-[300px]" 
+                  src={imageProfile.src} 
+                  alt='imagem aurelio'
+                  transition={{duration: 0.8, delay: 1.5}}
+                />
+            </motion.span>
 
+            {/* Logo Loop - Tecnologias */}
+            <motion.div 
+              className="w-[250px] md:w-[300px] overflow-hidden"
+              initial={{opacity: 0, y: 20}}
+              animate={{opacity: 1, y: 0}}
+              transition={{duration: 2.8, delay: 2.0}}
+            >
+              <LogoLoop
+                logos={techLogos}
+                speed={50}
+                direction="left"
+                logoHeight={32}
+                gap={24}
+                pauseOnHover={true}
+                scaleOnHover={true}
+                fadeOut={true}
+                fadeOutColor={theme === 'dark' ? '#09090B' : '#FFFFFF'}
+                ariaLabel="Technology stack"
+              />
+            </motion.div>
+          </div>
           <motion.div 
           initial={{x: -100, opacity:0, scale: 0.8}}
           animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -112,7 +182,15 @@ export const Profile = () =>{
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.8, delay: 1.4}}
                   >
-                    {t("profileSection.subtitle")}
+                    <RotatingText 
+                      texts={[
+                        t("profileSection.subtitle"),
+                        "Full Stack Developer",
+                        "AI Enthusiast",
+                        "Problem Solver"
+                      ]}
+                      interval={3000}
+                    />
                   </motion.h3>
                   <motion.p 
                     className="mt-2 pr-4 text-sm sm:text-base md:px-16 lg:px-0 md:text-lg w-5/4 text-center lg:text-start"
@@ -167,8 +245,11 @@ export const Profile = () =>{
                     <ButtonMidia clickAction={handleEmail}><LuMail size={"30px"} /></ButtonMidia>
                   </motion.div>
               </motion.div>
+              
                    
           </motion.div>
+
+         
          
           <motion.span 
           initial={{scale: 0, opacity: 0, y: 50}}
