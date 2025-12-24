@@ -21,7 +21,7 @@ export const Contact = () =>{
                 <div className="h-auto w-[98%] flex flex-col md:flex-row border-black dark:border-white  rounded-xl border-[1px]  py-6 px-4 sm:px-10 md:px-10 ">
                     <div className="flex flex-col h-auto  md:w-1/2  text-justify py-4  gap-6">
                         <div className="flex items-center gap-3">
-                            <HiOutlineSparkles className="text-yellow-400 text-2xl" />
+                            {/* <HiOutlineSparkles className="text-yellow-400 text-2xl" /> */}
                             <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-black dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">{t("contact.title")}</h1>
                         </div>
                         <p className=" text-sm md:text-base w-full text-justify md:w-2/3 leading-relaxed">{t("contact.description")}</p>

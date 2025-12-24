@@ -16,11 +16,15 @@ export const experienceData_en: ExperienceCardType[] = [
     titleJob: "Full Stack Developer (PHP/Laravel)",
     descriptionJob: [
       "Development and maintenance of the university's internship management platform",
-      "Implementation of new features in PHP with Laravel",
+      "Implementation of KPI Dashboard for monitoring active contracts, agreements and company profiles",
+      "Created a pending validation system, reducing student service time from days to seconds",
+      "Development of management report module with dynamic filters and Excel/PDF export",
+      "Automated document and declaration issuance, reducing processes from hours to seconds with one click",
+      "Prototyping of new internship platform using React and Supabase with AI and MCPs",
       "Bug fixes and PostgreSQL query optimization",
       "Use of Docker for environment standardization and Git for versioning"
     ],
-    usedtechnologies: ["PHP", "Laravel", "PostgreSQL", "Docker", "Git", "Cursor", "Claude Code", "MCPs", "Gemini-cli", "Gemini", "Task Master","Codex-cli"],
+    usedtechnologies: ["PHP", "Laravel", "PostgreSQL", "Docker", "Git", "React", "Supabase", "Cursor", "Claude Code", "MCPs", "Gemini-cli", "Gemini", "Task Master","Codex-cli"],
     dateIn: new Date(2025, 2),
     dateOut: new Date(Date.now()),
   },
@@ -47,11 +51,15 @@ export const experienceData_en: ExperienceCardType[] = [
     subtitleCompany: "Research and Development Center",
     titleJob: "Resident – Full Stack Developer",
     descriptionJob: [
-      "Development of interactive logistics games for IFBA",
-      "Acting as Scrum Master, organizing sprints and deadlines",
-      "Full stack development with React, TypeScript, Django and PostgreSQL"
+      "Contributed to the development of interactive logistics games for IFBA, making learning more dynamic and practical",
+      "Acted as Scrum Master, organizing sprints, creating tasks, distributing activities and ensuring deadlines were met",
+      "Implemented new features and maintained the application, including offline map development without relying on Google's API",
+      "Developed with React.js, TypeScript and Tailwind CSS on the front-end, and Django with PostgreSQL on the back-end",
+      "Used Docker for environment standardization and Git with Git Flow for versioning",
+      "Configured the project's CI/CD with deployment on Railway",
+      "Participated in agile practices and team collaboration"
     ],
-    usedtechnologies: ["React", "TypeScript", "Django", "PostgreSQL", "Scrum", "Git", "Figma"],
+    usedtechnologies: ["React", "TypeScript", "Tailwind", "Django", "PostgreSQL", "Docker", "Git", "Git Flow", "Railway", "Scrum", "Figma"],
     dateIn: new Date(2024, 1),
     dateOut: new Date(Date.now()),
   },

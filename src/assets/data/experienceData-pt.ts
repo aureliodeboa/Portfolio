@@ -15,8 +15,17 @@ export const experienceData_pt: ExperienceCardType[]= [
     subtitleCompany:"Universidade Federal do Vale do São Francisco",
 
     titleJob: "Desenvolvedor Full Stack (PHP/Laravel)",
-    descriptionJob: ["Desenvolvimento e manutenção da plataforma de gestão de estágios da universidade","Implementação de novas funcionalidades em PHP com Laravel","Correção de bugs e otimização de queries em PostgreSQL","Utilização de Docker para padronização de ambientes e Git para versionamento"],
-    usedtechnologies: ["PHP","Laravel","PostgreSQL","Docker","Git","Cursor","Claude Code","MCPs","Gemini-cli","Gemini","Task Master","Codex-cli"],
+    descriptionJob: [
+        "Desenvolvimento e manutenção da plataforma de gestão de estágios da universidade",
+        "Implementação de Dashboard de Indicadores (KPIs) para monitoramento de contratos ativos, convênios e perfil das empresas",
+        "Criação de sistema de validação de pendências, reduzindo o tempo de atendimento aos discentes de dias para segundos",
+        "Desenvolvimento de módulo de relatórios gerenciais com filtros dinâmicos e exportação para Excel/PDF",
+        "Automatização da emissão de documentos e declarações, reduzindo processos de horas para segundos com um clique",
+        "Prototipação de nova plataforma de estágios utilizando React e Supabase com IA e MCPs",
+        "Correção de bugs e otimização de queries em PostgreSQL",
+        "Utilização de Docker para padronização de ambientes e Git para versionamento"
+    ],
+    usedtechnologies: ["PHP","Laravel","PostgreSQL","Docker","Git","React","Supabase","Cursor","Claude Code","MCPs","Gemini-cli","Gemini","Task Master","Codex-cli"],
     dateIn: new Date(2025,2),
     dateOut:  new Date(Date.now()),
 },
@@ -39,8 +48,16 @@ export const experienceData_pt: ExperienceCardType[]= [
     subtitleCompany:"Centro de Pesquisa e Desenvolvimento",
 
     titleJob: "Residente – Desenvolvedor Full Stack",
-    descriptionJob: ["Desenvolvimento de jogos logísticos interativos para o IFBA","Atuação como Scrum Master, organizando sprints e prazos","Desenvolvimento full stack com React, TypeScript, Django e PostgreSQL"],
-    usedtechnologies: ["React","TypeScript","Django","PostgreSQL","Scrum","Git","Figma"],
+    descriptionJob: [
+        "Contribuí no desenvolvimento de jogos logísticos interativos para o IFBA, tornando o aprendizado mais dinâmico e prático",
+        "Atuei como Scrum Master, organizando sprints, elaborando tasks, distribuindo atividades e garantindo o cumprimento dos prazos",
+        "Implementei novas funcionalidades e realizei manutenção da aplicação, incluindo elaboração de mapas offline sem depender da API do Google",
+        "Desenvolvi com React.js, TypeScript e Tailwind CSS no front-end, e Django com PostgreSQL no back-end",
+        "Utilizei Docker para padronização dos ambientes e Git com Git Flow para versionamento",
+        "Configurei o CI/CD do projeto com deploy na Railway",
+        "Participei de práticas ágeis e colaboração em equipe"
+    ],
+    usedtechnologies: ["React","TypeScript","Tailwind","Django","PostgreSQL","Docker","Git","Git Flow","Railway","Scrum","Figma"],
     dateIn: new Date(2024,1),
     dateOut:  new Date(Date.now()),
 },
