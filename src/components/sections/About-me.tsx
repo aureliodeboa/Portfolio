@@ -39,13 +39,13 @@ export const About_me = () => {
     const aboutMeItems = t("current-language.locale") === "pt" ? aboutmeData_pt : aboutmeData_en;
     
     return (
-        <section ref={sectionRef} id="about-me" className="relative flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-12 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid overflow-hidden">
+        <section ref={sectionRef} id="about-me" className="relative flex bg-[#FFFFFF] text-black dark:bg-[#09090B] dark:text-white flex-col items-center w-full pt-20 h-auto gap-8 justify-around border-t-[1px] border-gray-800 border-solid overflow-hidden">
             {/* Partículas flutuantes */}
             <RandomParticles count={20} seed={101} />
            
             {/* Seção de texto sobre mim */}
             <ScrollFloat 
-                className="h-1/2 px-4 sm:px-10 md:px-20 w-full max-w-4xl"
+                className="h-1/2 px-8 sm:px-10 md:px-20 w-full max-w-4xl"
                 yOffset={60}
                 rotateOffset={2}
                 scaleOffset={0.05}

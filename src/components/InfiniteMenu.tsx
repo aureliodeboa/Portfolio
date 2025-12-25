@@ -700,6 +700,8 @@ class InfiniteGridMenu {
   private _frames = 0;
 
   private movementActive = false;
+  private rafId: number | null = null;
+  private isRunning = false;
 
   private TARGET_FRAME_DURATION = 1000 / 60;
   private SPHERE_RADIUS = 2;
@@ -744,7 +746,22 @@ class InfiniteGridMenu {
     this.updateProjectionMatrix();
   }
 
-  public run(time = 0): void {
+  public start(): void {
+    if (this.isRunning) return;
+    this.isRunning = true;
+    this.run();
+  }
+
+  public stop(): void {
+    this.isRunning = false;
+    if (this.rafId !== null) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  }
+
+  private run(time = 0): void {
+    if (!this.isRunning) return;
     this._deltaTime = Math.min(32, time - this._time);
     this._time = time;
     this._deltaFrames = this._deltaTime / this.TARGET_FRAME_DURATION;
@@ -753,7 +770,7 @@ class InfiniteGridMenu {
     this.animate(this._deltaTime);
     this.render();
 
-    requestAnimationFrame(t => this.run(t));
+    this.rafId = requestAnimationFrame(t => this.run(t));
   }
 
   private init(onInit?: InitCallback): void {
@@ -1061,10 +1078,32 @@ interface InfiniteMenuProps {
 
 const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null) as MutableRefObject<HTMLCanvasElement | null>;
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [activeItem, setActiveItem] = useState<MenuItem | null>(null);
   const [isMoving, setIsMoving] = useState<boolean>(false);
+  const [shouldInit, setShouldInit] = useState<boolean>(false);
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container || shouldInit) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldInit(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px 0px' }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [shouldInit]);
+
+  useEffect(() => {
+    if (!shouldInit) return;
+
     const canvas = canvasRef.current;
     let sketch: InfiniteGridMenu | null = null;
 
@@ -1080,7 +1119,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
         items.length ? items : defaultItems,
         handleActiveItem,
         setIsMoving,
-        sk => sk.run(),
+        sk => sk.start(),
         scale
       );
     }
@@ -1096,8 +1135,12 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      if (sketch) {
+        sketch.stop();
+        sketch = null;
+      }
     };
-  }, [items, scale]);
+  }, [items, scale, shouldInit]);
 
   const handleButtonClick = () => {
     if (!activeItem?.link) return;
@@ -1109,7 +1152,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
   };
 
   return (
-    <div className="relative w-full h-full bg-transparent">
+    <div ref={containerRef} className="relative w-full h-full bg-transparent">
       <canvas
         id="infinite-grid-menu-canvas"
         ref={canvasRef}

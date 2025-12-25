@@ -44,7 +44,7 @@ export const Contact = () =>{
                             </div>
                         </div>
                         
-                        <div className="mt-6 mr-32 md:mr-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                        <div className="mt-6 w-full mr-0 md:mr-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
                             <p className="text-sm text-gray-700 dark:text-gray-300 italic">
                                 "{t("contact.form.motivational")}"
                             </p>
