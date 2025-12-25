@@ -47,7 +47,7 @@ export const SendEmail = () =>{
     }
   
     return (
-      <div className="flex flex-col h-full w-full md:w-1/2 justify-between text-justify py-4 dark:text-white text-black">
+      <div className="flex flex-col flex-1 h-full w-full md:w-1/2 justify-between text-justify py-4 dark:text-white text-black">
         {feedback && (
           <div className={`${feedback.type === 'success' ? 'bg-green-100 border-green-300 text-green-800 dark:bg-green-900/20 dark:text-green-300 dark:border-green-700' : 'bg-red-100 border-red-300 text-red-800 dark:bg-red-900/20 dark:text-red-300 dark:border-red-700'} border rounded-md px-4 py-3 mb-4`}>
             {feedback.text}
@@ -58,7 +58,7 @@ export const SendEmail = () =>{
           <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.form.description")}</p>
         </div>
          
-        <form className="form flex flex-col h-full gap-6 content-center" onSubmit={handleSendEmail}>
+        <form className="form flex flex-col flex-1 gap-6" onSubmit={handleSendEmail}>
           <div className="relative">
             <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
             <input 
@@ -92,7 +92,7 @@ export const SendEmail = () =>{
           </div>
   
           <button 
-            className="button group flex items-center justify-center gap-3 cursor-pointer p-4 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold transition-all duration-300 hover:from-yellow-500 hover:to-orange-600 hover:shadow-lg hover:scale-105" 
+            className="button group mt-auto flex items-center justify-center gap-3 cursor-pointer p-4 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold transition-all duration-300 hover:from-yellow-500 hover:to-orange-600 hover:shadow-lg hover:scale-105" 
             type="submit"
           >
             <HiOutlinePaperAirplane className="text-lg group-hover:translate-x-1 transition-transform duration-300" />
