@@ -1194,7 +1194,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
           absolute
           w-full md:w-auto
           px-6 md:px-0
-          max-w-full md:max-w-[15ch]
+          max-w-full md:max-w-[18ch]
           text-sm sm:text-base md:text-base lg:text-lg xl:text-[1.5rem]
           left-1/2 md:left-auto
           bottom-[18%] md:bottom-auto
