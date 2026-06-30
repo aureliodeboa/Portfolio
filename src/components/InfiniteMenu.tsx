@@ -480,6 +480,57 @@ function createAndSetupTexture(
   return texture;
 }
 
+function getAtlasCellSize(gl: WebGL2RenderingContext, atlasSize: number): number {
+  const maxTextureSize = gl.getParameter(gl.MAX_TEXTURE_SIZE) as number;
+  const viewportBasedSize = window.innerWidth < 768 ? 256 : 384;
+  const maxSafeCellSize = Math.floor(maxTextureSize / Math.max(1, atlasSize));
+
+  return Math.max(128, Math.min(viewportBasedSize, maxSafeCellSize));
+}
+
+function drawImageCover(
+  ctx: CanvasRenderingContext2D,
+  image: HTMLImageElement,
+  x: number,
+  y: number,
+  size: number
+): void {
+  const imageAspect = image.naturalWidth / image.naturalHeight;
+  const targetAspect = 1;
+
+  let sx = 0;
+  let sy = 0;
+  let sw = image.naturalWidth;
+  let sh = image.naturalHeight;
+
+  if (imageAspect > targetAspect) {
+    sw = image.naturalHeight * targetAspect;
+    sx = (image.naturalWidth - sw) / 2;
+  } else {
+    sh = image.naturalWidth / targetAspect;
+    sy = (image.naturalHeight - sh) / 2;
+  }
+
+  ctx.drawImage(image, sx, sy, sw, sh, x, y, size, size);
+}
+
+function loadTextureImage(src: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.decoding = 'async';
+    img.onload = () => {
+      if ('decode' in img) {
+        img.decode().catch(() => undefined).then(() => resolve(img));
+        return;
+      }
+      resolve(img);
+    };
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
 type UpdateCallback = (deltaTime: number) => void;
 
 class ArcballControl {
@@ -702,6 +753,7 @@ class InfiniteGridMenu {
   private movementActive = false;
   private rafId: number | null = null;
   private isRunning = false;
+  private isDisposed = false;
 
   private TARGET_FRAME_DURATION = 1000 / 60;
   private SPHERE_RADIUS = 2;
@@ -757,6 +809,16 @@ class InfiniteGridMenu {
     if (this.rafId !== null) {
       cancelAnimationFrame(this.rafId);
       this.rafId = null;
+    }
+  }
+
+  public dispose(): void {
+    this.isDisposed = true;
+    this.stop();
+
+    if (this.gl && this.tex) {
+      this.gl.deleteTexture(this.tex);
+      this.tex = null;
     }
   }
 
@@ -846,32 +908,42 @@ class InfiniteGridMenu {
 
     const itemCount = Math.max(1, this.items.length);
     this.atlasSize = Math.ceil(Math.sqrt(itemCount));
-    const cellSize = 512;
+    const cellSize = getAtlasCellSize(gl, this.atlasSize);
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d')!;
     canvas.width = this.atlasSize * cellSize;
     canvas.height = this.atlasSize * cellSize;
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
 
-    Promise.all(
-      this.items.map(
-        item =>
-          new Promise<HTMLImageElement>(resolve => {
-            const img = new Image();
-            img.crossOrigin = 'anonymous';
-            img.onload = () => resolve(img);
-            img.src = item.image;
-          })
-      )
-    ).then(images => {
-      images.forEach((img, i) => {
-        const x = (i % this.atlasSize) * cellSize;
-        const y = Math.floor(i / this.atlasSize) * cellSize;
-        ctx.drawImage(img, x, y, cellSize, cellSize);
-      });
+    ctx.fillStyle = 'rgba(234, 179, 8, 0.14)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      gl.bindTexture(gl.TEXTURE_2D, this.tex);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
-      gl.generateMipmap(gl.TEXTURE_2D);
+    gl.bindTexture(gl.TEXTURE_2D, this.tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+
+    this.items.forEach((item, i) => {
+      loadTextureImage(item.image)
+        .then(img => {
+          if (this.isDisposed || !this.gl || !this.tex) return;
+
+          const x = (i % this.atlasSize) * cellSize;
+          const y = Math.floor(i / this.atlasSize) * cellSize;
+          const cellCanvas = document.createElement('canvas');
+          const cellCtx = cellCanvas.getContext('2d')!;
+
+          cellCanvas.width = cellSize;
+          cellCanvas.height = cellSize;
+          cellCtx.imageSmoothingEnabled = true;
+          cellCtx.imageSmoothingQuality = 'high';
+          drawImageCover(cellCtx, img, 0, 0, cellSize);
+
+          this.gl.bindTexture(this.gl.TEXTURE_2D, this.tex);
+          this.gl.texSubImage2D(this.gl.TEXTURE_2D, 0, x, y, this.gl.RGBA, this.gl.UNSIGNED_BYTE, cellCanvas);
+        })
+        .catch(() => {
+          // Keep the placeholder cell if an image fails to load.
+        });
     });
   }
 
@@ -1136,7 +1208,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
     return () => {
       window.removeEventListener('resize', handleResize);
       if (sketch) {
-        sketch.stop();
+        sketch.dispose();
         sketch = null;
       }
     };

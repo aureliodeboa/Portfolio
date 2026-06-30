@@ -20,79 +20,79 @@ export const aboutmeData_en: AboutMeItemType[] = [
         image: toSrc(cafeImg),
         link: '',
         title: 'Coffee',
-        description: 'Nothing beats a good cup of coffee to start the day, and to end the day.'
+        description: 'Coffee is part of my rhythm: it follows the start of the day, the pauses, and the good ideas that appear along the way.'
     },
     {
         image: toSrc(academiaImg),
         link: '',
         title: 'Gym',
-        description: 'Passionate about weightlifting since 2016. My refuge, source of health and daily discipline.'
+        description: 'I have been training since 2016. It is a habit that strengthens my body, my discipline, and my consistency.'
     },
     {
         image: toSrc(jiuImg),
         link: '',
         title: 'Jiu-Jitsu',
-        description: 'Jiu-Jitsu is my place of peace through the battle with myself, where I work my mind and body to always be better.'
+        description: 'In Jiu-Jitsu I find focus, humility, and self-control. It is where I train body and mind to improve a little every day.'
     },
     {
         image: toSrc(motoImg),
         link: '',
         title: '"Motorcycle"',
-        description: 'My second passion is motorcycles. The freedom of traveling on two wheels is incomparable.'
+        description: 'Motorcycles mean freedom, presence, and the open road. I enjoy the feeling of discovering new paths on two wheels.'
     },
     {
         image: toSrc(viagemImg),
         link: '',
         title: 'Traveling',
-        description: 'I love to travel, and if it\'s by motorcycle, even better! Exploring places like Jacobina-Bahia.'
+        description: 'I enjoy discovering places, living new stories, and stepping out of routine. If the trip is by motorcycle, even better.'
     },
     {
         image: toSrc(lolImg),
         link: '',
         title: 'League of Legends',
-        description: 'Casual LoL player in my "Plastic II" Elo. Having fun is what matters!'
+        description: 'I play League of Legends casually, proudly sitting in my "Plastic II" rank. In the end, having fun matters more than the ladder.'
     },
     {
         image: toSrc(tccImg),
         link: '',
         title: 'Computer Engineer',
-        description: 'Graduated from UNIVASF. Proud of my thesis and my academic journey.'
+        description: 'I graduated in Computer Engineering from UNIVASF. I am proud of the journey, the challenges, and the project that shaped my education.'
     },
     {
         image: toSrc(bebeImg),
         link: '',
         title: 'My Roots',
-        description: 'I love my family, my foundation, and the city I came from in the interior of Bahia. I\'m proud to come from the countryside.'
+        description: 'My family and my roots are my foundation. I am proud to come from the countryside of Bahia and of everything that path taught me.'
     },
     {
         image: toSrc(bicicletaImg),
         link: '',
         title: 'Cycling',
-        description: 'I like to explore by bicycle. That\'s where my passion for two wheels was born, I confess I\'m currently out of the pedals'
+        description: 'The bicycle is where my passion for two wheels began. I ride less than I would like today, but I still love the freedom it brings.'
     },
     {
         image: toSrc(aviaoImg),
         link: '',
         title: 'Airplane Pilot?',
-        description: 'In my spare time, I\'m an airplane pilot (Xd). Jokes aside, I love aviation.'
+        description: 'I am curious about aviation and everything related to flying. In my spare time I joke about being a pilot, but the passion is real.'
     },
     {
         image: toSrc(lerImg),
         link: '',
         title: 'Reading',
-        description: 'Avid reader of books on persuasion and psychology.'
+        description: 'I enjoy reading about psychology, behavior, and persuasion. Understanding people also helps me build better products.'
     },
     {
         image: toSrc(ensinarImg),
         link: '',
         title: 'Teaching',
-        description: 'I like to teach what I know, and I believe knowledge should be shared with as many people as possible.'
+        description: 'I like teaching what I learn. I believe knowledge grows when it is shared in a simple and accessible way.'
     },
     {
         image: toSrc(programarImg),
         link: '',
         title: 'Problem Solving',
-        description: 'Passionate about solving real problems using technology and programming.'
+        description: 'For me, programming means turning problems into solutions. I like building technology with purpose and practical value.'
     }
 ];
 

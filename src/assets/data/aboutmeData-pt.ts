@@ -20,79 +20,79 @@ export const aboutmeData_pt: AboutMeItemType[] = [
         image: toSrc(cafeImg),
         link: '',
         title: 'Café',
-        description: 'Nada como um bom cafézinho para começar o dia, e para terminar o dia.'
+        description: 'Café faz parte do meu ritmo: acompanha o começo do dia, as pausas e as boas ideias que aparecem no caminho.'
     },
     {
         image: toSrc(academiaImg),
         link: '',
         title: 'Musculação',
-        description: 'Apaixonado por musculação desde 2016. Meu refúgio, fonte de saúde e disciplina diária.'
+        description: 'Treino musculação desde 2016. É um hábito que fortalece meu corpo, minha disciplina e minha consistência.'
     },
     {
         image: toSrc(jiuImg),
         link: '',
         title: 'Jiu-Jitsu',
-        description: 'Jiu-Jitsu é meu lugar de paz através da guerra comigo mesmo, onde eu trabalho minha mente e corpo para ser sempre melhor.'
+        description: 'No Jiu-Jitsu encontro foco, humildade e autocontrole. É onde treino corpo e mente para evoluir um pouco mais a cada dia.'
     },
     {
         image: toSrc(motoImg),
         link: '',
         title: '"Motoca"',
-        description: 'Minha segunda paixão são motos. A liberdade de viajar sobre duas rodas é incomparável.'
+        description: 'Motos representam liberdade, presença e estrada. Gosto da sensação de descobrir novos caminhos sobre duas rodas.'
     },
     {
         image: toSrc(viagemImg),
         link: '',
         title: 'Viajar',
-        description: 'Amo viajar, e se for de moto, melhor ainda! Explorando lugares como Jacobina-Bahia.'
+        description: 'Gosto de conhecer lugares, viver novas histórias e sair da rotina. Se a viagem for de moto, a experiência fica ainda melhor.'
     },
     {
         image: toSrc(lolImg),
         link: '',
         title: 'League of Legends',
-        description: 'Jogador casual de lolzinho no meu Elo "Plástico II". A diversão é o que importa!'
+        description: 'Jogo League of Legends de forma casual, no meu honroso elo "Plástico II". No fim, a diversão vale mais que o ranque.'
     },
     {
         image: toSrc(tccImg),
         link: '',
         title: 'Engenheiro de Computação',
-        description: 'Formado pela UNIVASF. Orgulho do meu TCC e da minha jornada acadêmica.'
+        description: 'Sou formado em Engenharia de Computação pela UNIVASF. Tenho orgulho da jornada, dos desafios e do projeto que marcou minha formação.'
     },
     {
         image: toSrc(bebeImg),
         link: '',
         title: 'Minhas Raízes',
-        description: 'Amo minha familia minha base, e a cidade da qual eu vim no interior da Bahia. Tenho orgulho de vir do interior.'
+        description: 'Minha família e minha origem são minha base. Tenho orgulho de vir do interior da Bahia e de tudo que essa caminhada me ensinou.'
     },
     {
         image: toSrc(bicicletaImg),
         link: '',
         title: 'Pedalar',
-        description: 'Gosto de explorar de bicicleta. Foi onde nasceu minha paixão por duas rodas, confesso que estou parado dos pedais'
+        description: 'A bicicleta foi onde minha paixão por duas rodas começou. Hoje pedalo menos do que gostaria, mas ainda gosto da liberdade que ela traz.'
     },
     {
         image: toSrc(aviaoImg),
         link: '',
         title: 'Piloto de Avião?',
-        description: 'Nas horas vagas, piloto de avião (Xd). Brincadeiras à parte, adoro aviação.'
+        description: 'Tenho curiosidade por aviação e tudo que envolve voar. Nas horas vagas, brinco que sou piloto, mas a paixão é real.'
     },
     {
         image: toSrc(lerImg),
         link: '',
         title: 'Leitura',
-        description: 'Leitor ávido de livros sobre persuasão e psicologia.'
+        description: 'Gosto de ler sobre psicologia, comportamento e persuasão. Entender pessoas também ajuda a criar produtos melhores.'
     },
     {
         image: toSrc(ensinarImg),
         link: '',
         title: 'Ensinar',
-        description: 'Gosto de ensinar oque sei, e acredito que o conhecimento deve ser compartilhado com o maior número de pessoas possível.'
+        description: 'Gosto de ensinar o que aprendo. Acredito que conhecimento cresce quando é compartilhado de forma simples e acessível.'
     },
     {
         image: toSrc(programarImg),
         link: '',
         title: 'Resolver Problemas',
-        description: 'Apaixonado por resolver problemas reais utilizando  tecnologia e programação.'
+        description: 'Programar, para mim, é transformar problemas em soluções. Gosto de criar tecnologia com propósito e utilidade prática.'
     }
 ];
 
